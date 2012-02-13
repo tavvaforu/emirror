@@ -1,0 +1,5 @@
+[05-Jan-2012 06:34:49] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/vdevserv/public_html/emotionmirrors/www/emirror/modules/memories/memories.php on line 93
+[05-Jan-2012 06:35:40] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/vdevserv/public_html/emotionmirrors/www/emirror/modules/memories/memories.php on line 93
+[06-Jan-2012 07:21:53] PHP Parse error:  syntax error, unexpected $end in /home/vdevserv/public_html/emotionmirrors/www/emirror/modules/memories/memories.php on line 306
+[08-Jan-2012 23:03:49] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/vdevserv/public_html/emotionmirrors/www/emirror/modules/memories/open_memories.php on line 42
+[08-Jan-2012 23:04:00] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/vdevserv/public_html/emotionmirrors/www/emirror/modules/memories/open_memories.php on line 42

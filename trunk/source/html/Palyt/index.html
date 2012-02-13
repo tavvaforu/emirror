@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>:: Palyt ::</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+
+/***********************************************
+* Drop Down Date select script- by JavaScriptKit.com
+* This notice MUST stay intact for use
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and more
+***********************************************/
+
+var monthtext=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+
+function populatedropdown(dayfield, monthfield, yearfield){
+var today=new Date()
+var dayfield=document.getElementById(dayfield)
+var monthfield=document.getElementById(monthfield)
+var yearfield=document.getElementById(yearfield)
+for (var i=0; i<31; i++)
+dayfield.options[i]=new Option(i, i+1)
+dayfield.options[today.getDate()]=new Option(today.getDate(), today.getDate(), true, true) //select today's day
+for (var m=0; m<12; m++)
+monthfield.options[m]=new Option(monthtext[m], monthtext[m])
+monthfield.options[today.getMonth()]=new Option(monthtext[today.getMonth()], monthtext[today.getMonth()], true, true) //select today's month
+var thisyear=today.getFullYear()
+for (var y=0; y<20; y++){
+yearfield.options[y]=new Option(thisyear, thisyear)
+thisyear-=1
+}
+yearfield.options[0]=new Option(today.getFullYear(), today.getFullYear(), true, true) //select today's year
+}
+
+</script>
+</head>
+
+<body>
+ <div id="loginscreen">
+ 
+   <div id="log_wrap">
+     <div id="logo_holder"><img src="images/logo.jpg" width="175" height="87" /></div>
+     <div id="toprightpanel">
+      <form action="" method="get" class="form">
+       <label for="textfield"></label>
+       <input name="Username" type="text" id="Username"value="Username" onfocus="if(this.value=='Username') {this.value='';}" onblur="if(this.value=='') {this.value='Username';}" class="textfeild"/>
+       <label for="textfield2"></label>
+       <input name="Password" type="password" class="textfeild" id="Password" value="Password" maxlength="18" onfocus="if(this.value=='Password') {this.value='';}" onblur="if(this.value=='') {this.value='Password';}"  />
+       <input type="submit" name="Submit" id="button" value="Submit" class="login_btn" />
+       <div class="remember"></div>
+       <div class="forgotpasssword">Forgot Password?</div>
+       <div class="signup"><a href="#">Click Here</a></div>
+     </form>
+    </div>
+   </div>
+   
+   <div id="login_screen">
+     <div id="login_form">
+       <div class="signup">Sign Up Today</div>
+        <form action="" class="register">
+                <p>
+                    <label>First Name *
+                    </label>
+                    <input type="text"/>
+                    <label>Last Name *
+                    </label>
+                    <input type="text"/>
+                     <label>Email *
+                    </label>
+                    <input type="text"/>
+                    <label>Password *
+                    </label>
+                    <input type="password"/>
+                    <label>Gender *</label>
+                    <input type="radio" name="gender"/>
+                    <label class="gender">Male</label>
+                    <input type="radio" name="gender"/>
+                    <label class="gender">Female</label>
+                    <label>Birthdate *</label>
+                    <select id="daydropdown"></select> 
+                    <select id="monthdropdown"></select> 
+                    <select id="yeardropdown"></select>           
+                </p>
+                <input type="image" src="images/signup_btn.png" class="btn" value="Submit" /></p>             
+                </form>              
+                <script type="text/javascript">
+//populatedropdown(id_of_day_select, id_of_month_select, id_of_year_select)
+window.onload=function(){
+populatedropdown("daydropdown", "monthdropdown", "yeardropdown")
+}
+</script> 
+     </div>
+                                                          
+   </div>
+   <div id="footer">
+     <div class="footer_wrap">&copy; 2011 Palyt All All Rights Reserved </div>
+   </div>
+   
+ </div>
+</body>
+</html>

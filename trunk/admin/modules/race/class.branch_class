@@ -1,0 +1,23 @@
+<?php
+
+
+
+class branch_class extends atkMetaNode
+{
+    protected $table      = "branch_class";   
+//    protected $index      = "name";
+    protected $order      = "list_branch_code";
+    protected $flags      = array(NF_ADD_LINK, NF_ADDAFTERADD,NF_NO_EXTENDED_SEARCH, NF_EXPORT, NF_MRA,);
+  //  protected $descriptor = "[name]";
+    
+    public static function meta($policy)
+    {
+	
+	
+	
+  	}
+	
+	
+	
+ }
+?>

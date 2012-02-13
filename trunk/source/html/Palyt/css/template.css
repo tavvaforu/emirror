@@ -1,0 +1,221 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Basic CSS */
+html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, fieldset, input, abbr, article, aside, command, details, figcaption, figure, footer, header, hgroup, mark, meter, nav, output, progress, section, summary, time {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: 0 none;
+}
+
+.clear {
+    clear: both;
+}
+
+* {
+	outline:none;
+}
+
+form {
+	padding:0px;
+	margin:0px;
+}
+
+html {
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+margin:0;
+padding:0;
+}
+/* Basic CSS  End*/
+
+
+/* Login Screen*/
+#loginscreen{
+	background:url(../images/bg.jpg) top repeat-x;
+	padding:0;
+	margin:0 auto;
+	border:none;
+}
+
+#log_wrap{
+	width:996px;
+	margin:0 auto;
+	padding:0;
+	overflow:auto;
+}
+
+#logo_holder{
+	width:175px;
+	height:87px;
+	float:left;
+}
+
+
+#toprightpanel {
+width:400px;
+float:right;
+margin:0 15px 0 0;
+padding:20px 0 0;
+}
+
+#toprightpanel .textfeild {
+width:146px;
+height:24px;
+border:1px solid #bcbdc0;
+background:url(../images/textfield_bg.gif) repeat-x;
+color:#000;
+line-height:24px;
+margin:0 5px 0 0;
+padding:0 5px;
+}
+
+#toprightpanel .login_btn {
+background:url(../images/login_btn.gif) repeat-x;
+height:20px;
+border:1px solid #bcbdc0;
+color:#FFF;
+width:55px;
+text-align:center;
+font-weight:500
+margin:0;
+padding:0;
+}
+
+#toprightpanel .forgotpasssword {
+color:#FFF;
+font-size:12px;
+float:left;
+width:110px;
+margin:0;
+padding:10px 0 0 15px;
+}
+
+#toprightpanel .signup {
+color:#FFF;
+font-size:12px;
+float:left;
+width:60px;
+text-decoration:underline;
+margin:0 0 0 6px;
+padding:10px 0 0 10px;
+}
+
+#toprightpanel .signup a {
+color:#FFF;
+font-size:12px;
+float:left;
+text-decoration:underline;
+}
+
+#toprightpanel .signup a:hover {
+color:#FFF;
+text-decoration:none;
+}
+
+#toprightpanel .remember {
+color:#FFF;
+font-size:12px;
+float:left;
+width:156px;
+margin:0;
+padding:10px 0px 0px 0px;
+}
+
+#login_screen{
+	width:991px;
+	height:535px;
+	background:url(../images/loginscreen.png) no-repeat;
+	margin:0 auto;
+	padding:0 0 0 5px;
+}
+
+
+#login_form{
+	width:360px;
+	margin:20px 20px;
+	padding:20px;
+	float:right;
+}
+
+.signup{
+font-size:25px;
+margin:0 0 10px 0;
+width:350px;
+float:left;
+color:#38466a;
+text-align:center;
+font-weight:bold;
+}
+
+form.register label{
+    color:#444;
+    width:98px;
+    float: left;
+	font-size:12px;
+	font-weight:bold;
+    text-align: right;
+    margin-right: 15px;
+    margin-top:20px;
+}
+
+form.register input{
+    width: 228px;
+    color: #505050;
+    float: left;
+	height:33px;
+	border:1px solid #ababab;
+    margin-right: 5px;
+	margin:10px 0;
+}
+
+form.register select{
+    width: 70px;
+    color: #505050;
+    float: left;
+	height:20px;
+	border:1px solid #ababab;
+    margin-right: 5px;
+	margin:15px 0;
+}
+form.register input[type=radio]
+{
+    float:left;
+    width:20px;
+	height:10px;
+	margin-top:20px;
+}
+form.register label.gender{
+    margin-top:11px;
+    margin-bottom:2px;
+    width:34px;
+    float:left;
+    text-align:left;
+    line-height:30px;
+}
+form.register .btn{
+	width:105px;
+	height:34px;
+	margin:0 0 0 115px;
+}
+
+#footer{
+	width:100%;
+	margin:0 auto;
+	padding:0;
+	background:#c6ccd9;
+	border-top:4px solid #354465;
+}
+
+#footer .footer_wrap{
+	width:996px;
+	padding:10px;
+	margin:0 auto;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+}
+	

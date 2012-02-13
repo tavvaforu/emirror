@@ -1,0 +1,12 @@
+<?php
+
+  $en = array(
+
+    'app_title' => '::Emotions Mirror::',
+    'app_shorttitle' => 'Emotions Mirror',
+    'app_description' => 'Welcome to the Emotions Mirror Administration'
+
+  );
+
+
+?>

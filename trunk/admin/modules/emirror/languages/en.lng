@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * This is an example translations file. It contains some basic strings to get you started.
+ */
+$en=array(
+  "article_id"=>"Article",
+  "meta_kw"=>"Meta Key Words",
+"banner_position_id"=>"Banner Position",
+"banner_type"=>"Banner Type", 
+"banner_code"=>"Banner Code",
+"banner_type"=>"Banner Type",
+"banner_image"=>"Banner Image",
+"banner_Link"=>"Banner Link",
+"banner_name"=>"Banner Name",
+"profile_id"=>"User Group",
+	
+
+);

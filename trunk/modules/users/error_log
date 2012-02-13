@@ -1,0 +1,6 @@
+[17-Jan-2012 09:07:00] PHP Fatal error:  Class 'emirror_config' not found in /home/vdevserv/public_html/emotionmirrors/www/emirror/modules/users/signup.php on line 9
+[17-Jan-2012 09:08:18] PHP Fatal error:  Class 'palyt_config' not found in /home/vdevserv/public_html/emotionmirrors/www/emirror/inc/database.inc.php on line 3
+[17-Jan-2012 09:08:50] PHP Warning:  fopen(C:/wamp/www/emirror/templates/signup.tpl) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in /home/vdevserv/public_html/emotionmirrors/www/emirror/inc/template.inc.php on line 11
+[17-Jan-2012 09:08:50] PHP Warning:  filesize() [<a href='function.filesize'>function.filesize</a>]: stat failed for C:/wamp/www/emirror/templates/signup.tpl in /home/vdevserv/public_html/emotionmirrors/www/emirror/inc/template.inc.php on line 12
+[17-Jan-2012 09:08:50] PHP Warning:  fread(): supplied argument is not a valid stream resource in /home/vdevserv/public_html/emotionmirrors/www/emirror/inc/template.inc.php on line 12
+[17-Jan-2012 09:08:50] PHP Warning:  fclose(): supplied argument is not a valid stream resource in /home/vdevserv/public_html/emotionmirrors/www/emirror/inc/template.inc.php on line 14

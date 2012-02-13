@@ -1,0 +1,123 @@
+@charset "utf-8";
+/* CSS Document */
+
+h5{ font-size:16px;  font-weight:normal; color:#0075b7;   margin:0 0 0 35px;  text-shadow:0 1px #FFF; font-weight:bold; }
+
+
+#toprightpanel .remember {
+color:#0075b7;
+font-size:12px;
+float:left;
+width:156px;
+margin:0;
+padding:5px 0px 0px 0px;
+}
+
+#login_screen .lpanel .bullettext ul li {
+list-style:none;
+display:block;
+font-family:Arial, Helvetica, sans-serif;
+font-size:14px;
+color:#0075b7;
+text-shadow:0px 9px #fff; 
+padding:0;
+margin:20px 0 0 20px;
+}
+#login_screen .lpanel .bullettext ul li a{
+list-style:none;
+font-family:Arial, Helvetica, sans-serif;
+color:#0075b7;
+padding:0;
+text-decoration:underline;
+}
+
+#form-wrap .anonymous h4 {
+border:none;
+float:left;
+width:20px;
+margin:5px 0 0 10px;
+}
+
+#form-wrap textarea{
+	width:400px;
+	padding:2px 10px;
+	height:50px;
+	border:1px solid #075fa9;
+	font-size:12px;
+	color:#999;
+	margin:10px 0 5px 0;
+}
+
+#form-wrap input.submit_btn{
+	width:100px;
+background:url(../images/submit_btn.gif) repeat-x;
+height:30px;
+color:#0075b7;
+font-size:12px;
+font-weight:bold;
+text-align:center;
+width:100px;
+border:1px solid #fff;
+margin-left:180px;
+/* Do rounding (native in Opera, Firefox and Safari) */
+border-radius:6px;
+-webkit-border-radius:6px;
+-moz-border-radius:6px;
+padding:0;
+}
+
+#scnd_panel{
+	width:996px;
+	margin:0 auto;
+	padding:0 0 20px 0;
+}
+
+#scnd_panel .social_icon_holder{
+	width:200px;
+	height:180px;
+	padding:10px;
+	margin:20px;
+	float:right;
+	position:absolute;
+}
+
+.colorbg ul {
+width:440px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.colorbg li {
+text-align:center;
+text-decoration:none;
+float:left;
+margin:0;
+padding:0;
+}
+
+.colorbg li a{
+text-align:center;
+text-decoration:none;
+color:#000;
+margin:0;
+padding:0;
+}
+
+.colorbg li a:hover{
+text-align:center;
+text-decoration:underline;
+color:#000;
+margin:0;
+padding:0;
+}
+form li.buttons{
+	width:auto !important;
+	position:relative;
+	clear:both;
+	padding:20px 1% 0px 1%;
+}
+form li.buttons input{
+	font-size:100%;
+	margin-right:5px;
+}
