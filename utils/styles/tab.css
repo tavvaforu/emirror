@@ -1,0 +1,141 @@
+div.content {
+    border: #55acc5 solid 1px;
+    padding: 10px;
+	background:#FFF;
+	width:685px;
+	overflow:hidden;
+	margin:0px 0px 10px 0px;
+   }
+
+div.content.inactive {
+	display: none;
+	width:58%;
+}
+div.contentpr {
+    border: #55acc5 solid 1px;
+    clear: left;
+    padding: 10px;
+	width:635px;
+
+	margin:0px 0px 10px 0px;
+}
+
+div.contentpr.inactive {
+	display: none;
+	width:58%;
+}
+div.contentop {
+    border: #55acc5 solid 1px;
+    clear: left;
+    padding: 10px;
+	width:635px;
+
+	margin:0px 0px 10px 0px;
+}
+
+div.contentop.inactive {
+	display: none;
+	width:58%;
+}
+div.contentd {
+    border: #55acc5 solid 1px;
+    clear: left;
+    padding: 10px;
+	width:635px;
+
+	margin:0px 0px 10px 0px;
+}
+
+div.contentd.inactive {
+	display: none;
+	width:58%;
+}
+
+
+div.contentr {
+    border: #55acc5 solid 1px;
+    clear: left;
+    padding: 10px;
+	width:532px;
+
+	margin:0px 0px 10px 0px;
+}
+
+div.contentr.inactive {
+	display: none;
+	width:58%;
+}
+
+div.contento {
+    border: #55acc5 solid 1px;
+    clear: left;
+    padding: 10px;
+	width:635px;
+
+	margin:0px 0px 10px 0px;
+}
+
+div.contento.inactive {
+	display: none;
+	width:58%;
+}
+
+
+#toc {
+    height: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#toc a {
+    background: url(../../media/images/tabss.gif);
+    color: #FFF;
+    display: block;
+    float: left;
+    height: 30px;
+    padding-left: 15px;
+    text-decoration: none;
+}
+
+#toc a:hover {
+    background-color: #000;
+    background-position: 0;
+	
+}
+
+#toc a:hover span {
+    background-position: 100%;
+}
+
+#toc li {
+	list-style:none;
+    float: left;
+    margin: 0 1px 0 0;
+	font-size:14px;
+}
+
+#toc li a.active {
+    background-color: #48f;
+    background-position: 0 -60px;
+    color: #013b4b;
+    font-weight: bold;
+	font-size:14px;
+	
+	
+	
+}
+
+#toc li a.active span {
+    background-position: 100% -60px;
+	
+}
+
+#toc span {
+    background: url(../../media/images/tabss.gif) 100% 0;
+    display: block;
+    line-height: 30px;
+    padding-right: 15px;
+	
+	
+}

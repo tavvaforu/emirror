@@ -1,0 +1,252 @@
+
+
+====================================
+Log started, 13/01/2012 10:01:05
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 0
+
+Done in 0.000999927520752s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:56
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 0
+
+Done in 0.00138092041016s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:09
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 0
+
+Done in 0.00140810012817s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:19
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 0
+
+Done in 0.000730991363525s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:17
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 0
+
+Done in 0.000738859176636s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:25
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 0
+
+mysql_query(): supplied argument is not a valid MySQL-Link resource at /opt/lampp/htdocs/sunitha/emirror/modules/dhtmlxScheduler/codebase/connector/db_common.php line 900
+
+mysql_error(): supplied argument is not a valid MySQL-Link resource at /opt/lampp/htdocs/sunitha/emirror/modules/dhtmlxScheduler/codebase/connector/db_common.php line 901
+
+!!!Uncaught Exception
+Code: 0
+Message: MySQL operation failed
+
+
+
+
+====================================
+Log started, 13/01/2012 10:01:59
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 0
+
+mysql_query(): supplied argument is not a valid MySQL-Link resource at /opt/lampp/htdocs/sunitha/emirror/modules/dhtmlxScheduler/codebase/connector/db_common.php line 900
+
+mysql_error(): supplied argument is not a valid MySQL-Link resource at /opt/lampp/htdocs/sunitha/emirror/modules/dhtmlxScheduler/codebase/connector/db_common.php line 901
+
+!!!Uncaught Exception
+Code: 0
+Message: MySQL operation failed
+
+
+
+
+====================================
+Log started, 13/01/2012 10:01:02
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 0
+
+mysql_query(): supplied argument is not a valid MySQL-Link resource at /opt/lampp/htdocs/sunitha/emirror/modules/dhtmlxScheduler/codebase/connector/db_common.php line 900
+
+mysql_error(): supplied argument is not a valid MySQL-Link resource at /opt/lampp/htdocs/sunitha/emirror/modules/dhtmlxScheduler/codebase/connector/db_common.php line 901
+
+!!!Uncaught Exception
+Code: 0
+Message: MySQL operation failed
+
+
+
+
+====================================
+Log started, 13/01/2012 10:01:55
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+mysql_query(): supplied argument is not a valid MySQL-Link resource at /opt/lampp/htdocs/sunitha/emirror/modules/dhtmlxScheduler/codebase/connector/db_common.php line 900
+
+mysql_error(): supplied argument is not a valid MySQL-Link resource at /opt/lampp/htdocs/sunitha/emirror/modules/dhtmlxScheduler/codebase/connector/db_common.php line 901
+
+!!!Uncaught Exception
+Code: 0
+Message: MySQL operation failed
+
+
+
+
+====================================
+Log started, 13/01/2012 10:01:47
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+Done in 0.000926971435547s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:53
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+Done in 0.00122594833374s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:36
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+Done in 0.0013370513916s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:47
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+Done in 0.000965118408203s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:22
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+Done in 0.00130701065063s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:37
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+Done in 0.00126695632935s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:40
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+Done in 0.000802993774414s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:43
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+Done in 0.000799179077148s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:18
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource at /opt/lampp/htdocs/sunitha/emirror/modules/dhtmlxScheduler/codebase/connector/db_common.php line 907
+
+Done in 0.000593185424805s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:21
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource at /opt/lampp/htdocs/sunitha/emirror/modules/dhtmlxScheduler/codebase/connector/db_common.php line 907
+
+Done in 0.00074291229248s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:57
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+Done in 0.000821828842163s
+
+
+
+====================================
+Log started, 13/01/2012 10:01:05
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+Done in 0.000817060470581s
+
+
+
+====================================
+Log started, 13/01/2012 11:01:37
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 1
+
+Done in 0.000806093215942s
+

@@ -1,0 +1,682 @@
+<?php
+include('C:/wamp/www/emirror/inc/config.inc.php');
+include('C:/wamp/www/emirror/inc/pagination1.php');
+define("TEMP_ROOT",'C:/wamp/www//emirror/templates/');
+require_once("C:/wamp/www/emirror/includes/header.php");
+$checkid=@implode(",",$_POST['check_list']);
+
+//print_r($_GET);
+/*include("classes/config.php");
+include("classes/pagination1.php");*/
+$arr=explode(".",$_SERVER['HTTP_HOST']);
+
+//echo '<pre>';print_r($_POST);exit;
+//print_r($_GET);
+
+$delid=$_GET['delid'];
+
+$action=$_GET['action'];	
+
+//echo $_POST['keyword'];
+
+$array=array("easwar","rajesh","akella","eswar");
+//print $arr[0];
+if($arr['0']=='www')
+{
+ if($arr['1']!='emirror')
+ {
+	 $nn=$arr['1'];	 
+  if(!in_array($arr['1'],$array))
+  {
+   header("location:404.html");
+  }
+ }
+}
+else
+{
+ if($arr['0']!='emirror')
+ {
+  $nn=$arr['0'];	 
+  if(!in_array($arr['0'],$array))
+  {
+   //header("location:404.html");
+  }
+ }
+}
+
+if($nn=='easwar')
+{
+	$tmail="eswar.a@sergeinfo.com";
+}
+elseif($nn=='rajesh')
+{
+	$tmail="rajdaggubati@gmail.com";
+}
+elseif($nn=='eswar')
+{
+	$tmail="nandueverurs@gmail.com";
+}
+elseif($nn=='akella')
+{
+	$tmail="sriakella@gmail.com";
+}
+else
+{
+	$nn='easwar';
+	$tmail="eswar.a@sergeinfo.com";
+}
+$db=new myclass;
+$db->myconnect();
+//$tpl_object = new Template("templates/message");
+$tpl_object = new Template(TEMP_ROOT."memories");
+$tp = $tpl_object->getContent();
+/*if($_POST['mode']=="Delete"){
+}*/
+
+if(isset($_GET['id']) && $_GET['id']!="")
+{
+//echo "select a.*,b.message_intensity as color_id from messagetrigger a,message_intensity b where a.message_color_id=b.id and a.id='$id'";
+  $my_draft=mysql_query("select a.*,b.message_intensity as color_id from messagetrigger a,message_intensity b where a.message_color_id=b.id and a.id='$id'");
+  $my_arrdraft=mysql_fetch_array($my_draft);
+  $id=$my_arrdraft['id'];
+ $draftmessage=$my_arrdraft['message'];
+$condate=strtotime($my_arrdraft['create_time']);
+		$draftdate=date('j M Y',$condate);
+$draftmessage_intensity=$my_arrdraft['message_intensity'];
+$col_id=$my_arrdraft['color_id'];
+$sender=$my_arrdraft['sender_name'];
+$attachres=mysql_query("select * from trigger_attachments where trigger_id=$id");
+$i=1;
+while($ar=mysql_fetch_array($attachres))
+{
+	$fil=$ar['attachments'];
+	$flname = explode('_-_',$fil);
+	//echo '<pre>';print_r($flname);exit;
+	//echo count($flname);
+	if(count($flname)>1)
+	{
+		$atchName = $flname[1];
+	} else {
+		$atchName = $fil;
+	}
+$resattach.="<a href='../../media/trigger_files/".$fil."' target='_blank' >".$atchName."</a><br>" ;
+$i++;
+
+}
+}
+//echo "select id from messagetrigger where  sender_email='$tmail' and send_type=1  and status!='SDeleted' and status!='Deleted' ";
+$r1=mysql_query("select id from messagetrigger where  sender_email='$tmail' and message_type_id=4 and send_type=1  and status!='SDeleted' and status!='Deleted' ");
+$tot_sent=mysql_num_rows($r1);
+//echo "select id from messagetrigger where  email='$tmail' and status!='RDeleted' and status!='Deleted' ";
+$r2=mysql_query("select id from messagetrigger where  email='$tmail' and message_type_id=4 and send_type=1 and status!='RDeleted' and status!='Deleted' ");
+$tot_received=mysql_num_rows($r2);
+
+
+$colorsQuery = mysql_query("SELECT * FROM message_intensity");
+$totalColors = mysql_num_rows($colorsQuery);
+
+/////////# of messages sent Graph Code///////////////
+$chsent = '';
+while($my_colors=mysql_fetch_array($colorsQuery))
+{
+	$ch1=mysql_query("SELECT message_color_id FROM messagetrigger  where  sender_email='$tmail' and message_type_id=4 and status!='SDeleted' and send_type =1 and status!='Deleted' and message_color_id=".$my_colors['id']);
+	
+	if(mysql_num_rows($ch1)!=0)
+	{
+		$nr=mysql_num_rows($ch1);
+		if($i1!=$totalColors)
+		{
+		$chsent.=$nr.",";
+		$chcolorCode.=$my_colors['message_intensity'].",";
+		$chcolorType.=$my_colors['desc']."|";
+		$chcolorcounts.=$nr."|";
+		}
+		else
+		{
+		$chsent.=$nr;
+		}
+
+	}
+}
+if($chsent!='')
+{
+	$chsent = trim($chsent,',');
+	$chcolorCode = trim($chcolorCode,',');
+	$chcolorType = trim($chcolorType,'|');
+	$chcolorcounts = trim($chcolorcounts,'|');
+}
+/////////////////End//////////////////////
+
+
+/////////# of messages sent Graph Code///////////////
+$chrec = '';
+//echo 'inside';exit;
+$colorsQuery1 = mysql_query("SELECT * FROM message_intensity");
+while($my_colors1=mysql_fetch_array($colorsQuery1))
+{
+	
+	$ch1=mysql_query("SELECT message_color_id FROM messagetrigger  where  email='$tmail' and message_type_id=4 and send_type=1 and status!='SDeleted' and status!='Deleted' and message_color_id=".$my_colors1['id']);
+	
+	if(mysql_num_rows($ch1)!=0)
+	{
+		$nr1=mysql_num_rows($ch1);
+		if($i1!=$totalColors)
+		{
+		$chrec.=$nr1.",";
+		$chcolorCodeRec.=$my_colors1['message_intensity'].",";
+		$chcolorTypeRec.=$my_colors1['desc']."|";
+		$chcolorcount.=$nr1."|";
+		}
+		else
+		{
+		$chrec.=$nr1;
+		}
+
+	}
+}
+if($chrec!='')
+{
+	$chrec = trim($chrec,',');
+	$chcolorCodeRec = trim($chcolorCodeRec,',');
+	$chcolorTypeRec = trim($chcolorTypeRec,'|');
+	$chcolorcount = trim($chcolorcount,'|');
+}
+/////////////////End//////////////////////
+
+
+//echo $chsent.'----'.$chcolorCode.'------'.$chcolorType;exit;
+
+if($chsent != '')
+{
+	$sent_cht="<img src='http://chart.apis.google.com/chart?cht=p&chs=300x150&chd=t:".$chsent."&chco=".$chcolorCode."&chl=".$chcolorType."&chdl=".$chcolorcounts."' >";
+} else {
+
+	$sent_cht = '&nbsp;&nbsp;&nbsp;No data available';
+}
+
+
+
+if($chrec != '')
+{
+	$rec_cht="<img src='http://chart.apis.google.com/chart?cht=p&chs=300x150&chd=t:".$chrec."&chco=".$chcolorCodeRec."&chl=".$chcolorTypeRec."&chdl=".$chcolorcount."' >";
+} else {
+	$rec_cht="&nbsp;&nbsp;&nbsp;No data available";
+}
+
+
+
+if($action="Delete" && $delid!="")
+{
+$sql=mysql_query("update messagetrigger set status='Deleted' where id='".$delid."'");
+ $msg="Record deleted succesfully";
+  
+}
+
+if(isset($_GET['msg']))
+{
+  $msg=$_GET['msg'];
+}
+$tp=str_replace("{msg}",$msg,$tp);
+if(!isset($_GET['order']))
+{
+	$_GET['order'] = 'id';
+}
+$order=$_GET['order'];
+if($_GET['order']=="")
+{
+	$order="id";
+}
+$otype=$_GET['otype'];
+if(!isset($_GET['otype']))
+{
+	$otype="";
+} else {
+	$otype="a";
+}
+if($otype=='a')
+{
+$ot="asc";	
+}
+else
+{
+$ot="desc";
+}
+//echo $otype;
+//echo $ot;exit;
+
+//echo  $_POST['saveForm'];exit;
+
+
+//Insertion of memories
+
+if($_POST['saveForm']=="Save" || $_POST['saveForm']=="Send")
+{
+//echo '<PRE>';print_r($_POST);exit;
+	$title=$_POST['title'];
+	$message=$_POST['message'];
+	$message_intensity=$_POST['intensity'];
+	$message_color_id=$_POST['color_id'];
+	$message_type_id=4;
+	$sender_name="$nn";
+	$sender_email="$tmail";
+	if($_POST['saveForm']=='Save'){
+		$send_type = "0";
+		$msg="Message Saved as Draft succesfully.";
+		$saveType = 0;
+	} else {
+	$send_type="1";
+	$msg="Message Sent succesfully.";
+	$saveType = 1;
+    }
+	//echo "insert into messagetrigger(sender_name,sender_email,message,message_intensity,message_type_id,send_type,message_color_id)values('$nn','$tmail','$message','$message_intensity','$message_type_id','$send_type','$message_color_id')";exit;
+	mysql_query("insert into messagetrigger(sender_name,sender_email,message,message_intensity,message_type_id,send_type,title,message_color_id)values('$nn','$tmail','$message','$message_intensity','$message_type_id','$send_type','$title',$message_color_id)");
+	$insid=mysql_insert_id();
+	if($insid)
+	  header("location:memories.php?msg=$msg&stype=$saveType#page=page-2");
+	?>
+	
+	
+	<?php
+	
+require_once(SITE_ROOT."includes/header.php");
+$mail = new PHPGMailer();
+$mail->IsHTML(true);
+$mail->Username = 'eswar.a@sergeinfo.com';
+$mail->Password = 'eswara123';
+$mail->From = 'eswar.a@sergeinfo.com';
+$mail->FromName = 'Emotions Mirror';
+$mail->Subject = 'New Message From '.$sender_name.' Through Emotions Mirror';
+$mail->AddAddress($email);
+$mail->Body = '
+
+ <div style="width:620px;background:#c4ddeb;margin:0 auto;padding:10px;overflow:auto;">
+ <div style="width:600px;background:#FFFFFF;margin:0 auto;padding:10px;overflow:auto;">
+   
+   <div style="width:600px;height:47px;">
+      <img src="http://emirror.vdevserver.co.cc/testing/images/inner_logo.png" width="229" height="47" alt="Emotions Mirror" />
+   </div>
+   
+   <div style="width:600px;margin:10px 0;padding:0;" >
+    
+	<div style="width:120px;margin:0;padding:0;float:left;">
+	
+    <img src="http://emirror.vdevserver.co.cc/testing/images/profile.jpg" width="120" height="120" alt="Emotions Mirror" />   
+	
+	</div>
+	
+   <div style="width:470px;margin:0 0 0 10px;padding:0;float:right;">
+   <h5  style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#a7a4a4;font-style:normal;padding:0;margin:0;">This message is sent to you from Emotions Mirror site</h5>
+   <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#333;font-style:normal;"><strong>Name :</strong> '.$sender_name.'</p>
+   
+   
+   
+   <h6  style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#333333;font-weight:bold;padding:0;margin:0;">Dear '.$name.',</h6>
+   <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#333;font-style:normal;">
+'.substr($message,0,20).'<br />
+<br />
+To View the message 
+<a href="http://emirror.vdevserver.co.cc/emirror/modules/messages/open_memories.php?stype='.$send_type.'&id='.$insid.'">Click Here</a>
+</p>
+   <h6 style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#333333;font-weight:bold;padding:0;margin:0;">Thanks,</h6>
+   <h5 style="font-family:Arial, Helvetica, sans-serif;font-size:12px;color:#a7a4a4;font-style:normal;padding:0;margin:0;">Emotions Mirror Team</h5>
+   </div>
+   </div>
+  </div>
+ </div>
+';
+	
+	if($_POST['unums']>=1)
+	{
+		for($i=1;$i<=$_POST['unums'];$i++)
+		{
+			 $fname="attachment_".$i;
+			if($_FILES[$fname]['name']!="")
+			{
+				$fileName = str_replace(' ', '_', $_FILES[$fname]['name']);
+				$fsname=date('Ymdhis').'_-_'.$fileName;
+				move_uploaded_file($_FILES[$fname]['tmp_name'],"../../media/trigger_files/".$fsname);
+				mysql_query("insert into trigger_attachments(trigger_id,attachments)values($insid,'$fsname')");
+				$mail->AddAttachment("../../media/trigger_files/".$fsname);
+				
+			}
+		}
+	}
+	
+	if($_GET['stype'] !=0)
+	{
+		$mail->Send();
+	}			
+	
+}
+
+if(isset($_GET['stype']) && $_GET['stype']!="")
+{
+	$send_type=$_GET['stype'];
+}
+else
+{
+	$send_type=1;
+}
+
+if($send_type==2)
+		{
+			$osender="sender_name";
+			$tp=str_replace("{SENDER_HEAD}","Sender",$tp);
+		}
+		else
+		{
+			$osender="name";
+			$tp=str_replace("{SENDER_HEAD}","Receiver",$tp);
+		}
+
+	//for searching
+	//print_r($_GET);exit;
+	
+
+	$keyword=$_GET['keyword'];
+	$fromdate=$_GET['fromdate'];
+	$todate=$_GET['todate'];
+	
+	
+	if(isset($_GET['keyword']) && $_GET['keyword']!=""){
+	   $msql=" and a.message like '%".$_GET['keyword']."%'";
+	}
+	else{
+	$msql=" and 1=1";
+	}
+	if($_GET['fromdate']!="" && $_GET['todate']!=""){
+	$dsql=" and DATE_FORMAT(create_time, '%Y-%m-%d') between '".$_GET['fromdate']."'and '".$_GET['todate']."'";
+	}
+	else{
+	$dsql=" and 1=1";
+	}
+	
+	//print_r($_POST);
+	//print_r($_GET);
+	if($_POST['saveForm']=="Delete")
+{
+  if($checkid!="")
+  {
+     //echo "update messagetrigger set status='Deleted' where id in ('".$checkid."')";
+     $sql=mysql_query("update messagetrigger set status='Deleted' where id in (".$checkid.")");
+     $msg="Record(s) deleted succesfully";
+	  
+  }
+  else
+  {
+    $msg="Error-in deleting the Record";
+  }$stype=$_POST['stype'];
+  header("location:memories.php?stype=$stype&msg=$msg#page=page-2");
+}
+
+/////Pagination code starts here//////////
+if($send_type=='2')
+{
+//echo "select a.*,b.message_intensity as color_id from messagetrigger a,message_intensity b where a.message_color_id=b.id and message_type_id='3' and email='$tmail' $msql $dsql and status!='Deleted' and status!='RDeleted'";
+$my_res1=mysql_query("select a.*,b.message_intensity as color_id from messagetrigger a,message_intensity b where a.message_color_id=b.id and message_type_id='4' and email='$tmail' and send_type=1  $msql $dsql and status!='Deleted' and status!='RDeleted'");
+}else{
+//echo "select a.*,b.message_intensity as color_id from messagetrigger a,message_intensity b where a.message_color_id=b.id and  message_type_id='3' and sender_email='$tmail' and send_type=$send_type $msql $dsql and status!='Deleted' and status!='SDeleted'";
+$my_res1=mysql_query("select a.*,b.message_intensity as color_id from messagetrigger a,message_intensity b where a.message_color_id=b.id and  message_type_id='4' and sender_email='$tmail' and send_type=$send_type $msql $dsql and status!='Deleted' and status!='SDeleted'");
+}
+/*paging statrs */
+$totalRecords = mysql_num_rows($my_res1);
+$limit = 8;
+$totalPages = ceil ($totalRecords/$limit); 
+$page   = intval($_GET['page']);
+$start = $page* $limit;
+if($page == '')
+{
+	$start = 0;
+} else {
+	$start = ($start - $limit);
+}
+
+
+$tpages = ($_GET['tpages']) ? intval($totalPages ) : $totalPages; // 20 by default
+$adjacents  = intval($_GET['adjacents']);
+
+if($page<=0)  $page  = 1;
+if($adjacents<=0) $adjacents = 4;
+
+$reload = $_SERVER['PHP_SELF'] . "?stype=".$stype."&tpages=" . $tpages . "&amp;adjacents=" . $adjacents;
+
+/*  eends*/
+//echo $start;
+$next=$start+$limit;
+//echo $totalRecords.'----'.$next;exit;
+if($totalRecords < $next)
+{ 
+	$last = $totalRecords;
+} else {
+	$last  = $next;
+}
+$pagerecords=$start."-". $last." of ".$totalRecords;
+//////ENd/////////
+
+if($send_type=='2')
+{
+//echo "select a.*,b.message_intensity as color_id from messagetrigger a,message_intensity b where a.message_color_id=b.id and message_type_id='3'  and email='$tmail' $msql $dsql and status!='Deleted' and status!='RDeleted' order by $order $ot LIMIT $start,$limit";
+$my_res=mysql_query("select a.*,b.message_intensity as color_id from messagetrigger a,message_intensity b where a.message_color_id=b.id and message_type_id='4' and email='$tmail' $msql $dsql and status!='Deleted' and status!='RDeleted' order by $order $ot LIMIT $start,$limit");
+}
+else
+{
+//echo "select a.*,b.message_intensity as color_id from messagetrigger a,message_intensity b where a.message_color_id=b.id and  message_type_id='2' and send_type=$send_type $msql $dsql and status!='Deleted' and status!='SDeleted' order by $order $ot LIMIT $start,$limit";
+$my_res=mysql_query("select a.*,b.message_intensity as color_id from messagetrigger a,message_intensity b where a.message_color_id=b.id and  message_type_id='4' and sender_email='$tmail' and send_type=$send_type $msql $dsql and status!='Deleted' and status!='SDeleted' order by $order $ot LIMIT $start,$limit");
+}
+//echo "select * from messagetrigger where message_type_id='3' and send_type='$send_type'  and status!='Deleted'";
+//echo mysql_num_rows($my_res);exit;
+
+if(mysql_num_rows($my_res)>0)
+{
+	$rcnt=0;
+	while($my_arr=mysql_fetch_array($my_res))
+	{
+		$id=$my_arr['id'];
+		$message=substr($my_arr['message'],0,11);
+		$id=$my_arr['id'];
+		$title=$my_arr['title'];
+		//$condate=strtotime($my_arr['create_time']);
+		//$date=date('j M Y',$condate);
+		$date=$db->displayDateFormat($my_arr['create_time']);
+		//=displayDateFormat($my_arr['create_time']);
+		$message_intensity=$my_arr['message_intensity'];
+		$col_id=$my_arr['color_id'];
+		/*if($message_color_id==1)
+		{
+		  $s="<img src='intensity3.gif'>";
+		 }if($message_color_id==2)
+		{
+		  $s="<img src='intensity2.gif'>";
+		 }*/
+		
+		if($send_type==2)
+		{
+			$sender=$my_arr['sender_name'];
+			$osender="sender_name";
+			$tp=str_replace("{SENDER_HEAD}","Sender",$tp);
+		}
+		else
+		{
+			$sender=$my_arr['name'];
+			$osender="name";
+			$tp=str_replace("{SENDER_HEAD}","Receiver",$tp);
+		}
+		
+		$attachres=mysql_query("select * from trigger_attachments where trigger_id=$id");
+		
+
+$res.='		<div class="clearall"></div>';
+$rcnt++;
+//echo $id;
+if($rcnt % 2=='0')
+{
+$res.='	<div style="height:26px; background-color:#e0e8ef;">';
+}
+else
+{
+	$res.='	<div style="height:26px; background-color:#eeeeee;">';
+}
+$res.='	<span style="float:left;margin:0px 0px 5px 0px; padding:0px; width:150px;">
+  <label class="choice" for="Field0_2" style="padding-left:10px; padding-right:5px; margin:0px; " >
+  <input name="check_list[]" type="checkbox"  id="check_list[]"  value="'.$id.'" style="margin-right:5px; margin-top:4px;"/>';
+  if(mysql_num_rows($attachres) > 0)
+  {
+ $res.='<img src="{IMG_URL}attachemtn.gif" width="16" height="14" alt="attachemet" />';
+  } else {
+	$res.='<img src="{IMG_URL}1.gif" width="16" height="14" alt="attachemet" />';
+  }
+  $res.='<a href="open_memories.php?stype='.$send_type.'&id='.$id.'">'.$message.'</a></label>
+</span>
+                    <div style="float:left; width:auto; margin:0px 0px 0px 10px; padding:6px 0px 0px 15px" > '.$date.'</div>
+					                    <div style="float:left; width:auto; margin:0px 0px 0px 10px; padding:6px 0px 0px 40px" >
+							  <span style="height:0px;width:10px;background-color:#'.$col_id.'" >&nbsp;</span>  
+							    
+							    </div>
+
+                    <div style="float:left; width:26px; height:20px;margin:0px 0px 0px 70px; padding:6px 0px 0px 22px" >					
+					'.$message_intensity.'</div>                
+  <div  style="padding:6px 0px 0px 15px;margin-right:55px;" class="socialicons">';
+   if($send_type==0) { 
+  $res.='<a href="memories.php?id='.$id.'">Edit</a>';
+   } 
+  $res.='<a href="#"><img src="{IMG_URL}facebook_icon.gif" width="16" height="16" /></a>
+  <a href="#"><img src="{IMG_URL}twitter_icon.gif" width="16" height="16" /></a><a href="#" onclick="return checkDelete('.$id.')";><img src="{IMG_URL}delete.gif" width="13" flot="right"height="13" /></a></div>
+</div>';
+		
+	}
+	
+}
+else{
+$res="";
+}
+$res1= $pagerecords.paginate_one($reload,$page,$tpages);
+
+//echo $send_type;
+if(isset($_GET['stype']))
+{
+	if($_GET['stype'] == 2)
+	{
+		$classR = 'class="active"';
+	} else {
+		$classR = '';
+	}
+	if($_GET['stype'] == 0)
+	{
+		$classD = 'class="active"';
+	} else {
+		$classD = '';
+	}
+	if($_GET['stype'] == 1)
+	{
+		$classS = 'class="active"';
+	} else {
+		$classS = '';
+	}
+	if($_GET['stype'] == 3)
+	{
+		$classP = 'class="active"';
+	} else {
+		$classP = '';
+	}
+} else {
+	$classS = 'class="active"';
+}
+//echo $order;
+if($order=="message" && $otype=="a")
+{
+$tp=str_replace("{MSG_SORT}",'<a href="memories.php?stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=message&otype=d#page=page-2" >
+<img src="{IMG_URL}up_arrow.png" width="12" height="6" alt="descendingorder" title="Descending Sort" align="absmiddle"  border="0" /></a>',$tp);
+}
+else
+{
+$tp=str_replace("{MSG_SORT}",'<a href="memories.php?stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=message&otype=a#page=page-2" >
+<img src="{IMG_URL}down_arrow.png" width="12" height="6" alt="ascendingorder" title="Ascending Sort" align="absmiddle"  border="0" /></a>',$tp);
+}
+if($order=="$osender" && $otype=="a")
+{
+$tp=str_replace("{SENDER_SORT}",'<a href="memories.php?stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order='.$osender.'&otype=d#page=page-2" >
+<img src="{IMG_URL}up_arrow.png" width="12" height="6" alt="descendingorder" title="Descending Sort" align="absmiddle"  border="0" /></a>',$tp);
+}
+else
+{
+$tp=str_replace("{SENDER_SORT}",'<a href="memories.php?stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order='.$osender.'&otype=a#page=page-2" >
+<img src="{IMG_URL}down_arrow.png" width="12" height="6" alt="ascendingorder" title="Ascending Sort" align="absmiddle"  border="0" /></a>',$tp);
+}
+if($order=="create_time" && $otype=="a")
+{
+$tp=str_replace("{TIME_SORT}",'<a href="memories.php?stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=create_time&otype=d#page=page-2" >
+<img src="{IMG_URL}up_arrow.png" width="12" height="6" alt="descendingorder" title="Descending Sort" align="absmiddle"  border="0" /></a>',$tp);
+}
+else
+{
+$tp=str_replace("{TIME_SORT}",'<a href="memories.php?stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=create_time&otype=a#page=page-2" >
+<img src="{IMG_URL}down_arrow.png" width="12" height="6" alt="ascendingorder" title="Ascending Sort" align="absmiddle"  border="0" /></a>',$tp);
+}
+if($order=="message_intensity" && $otype=="a")
+{
+$tp=str_replace("{INTENSITY_SORT}",'<a href="memories.php?stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=message_intensity&otype=d#page=page-2" >
+<img src="{IMG_URL}up_arrow.png" width="12" height="6" alt="descendingorder" title="Descending Sort" align="absmiddle"  border="0" /></a>',$tp);
+}
+else
+{
+$tp=str_replace("{INTENSITY_SORT}",'<a href="memories.php?stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=message_intensity&otype=a#page=page-2" >
+<img src="{IMG_URL}down_arrow.png" width="12" height="6" alt="ascendingorder" title="Ascending Sort" align="absmiddle"  border="0" /></a>',$tp);
+}
+if($my_arrdraft['id']!=""){
+$tp=str_replace("{DRAFT_BTN}",'<input id="saveForm" onclick="return valid_memoryform(document.messageform);" name="saveForm" class="inr_btn" type="submit" value="Send"/>
+   ',$tp);
+ $tp=str_replace("{tab_name}",'<span>Edit</span>',$tp);
+
+}else{
+$tp=str_replace("{DRAFT_BTN}",'<input id="saveForm" name="saveForm" class="inr_btn" type="button" value="Preview" onclick="return mypopup_memory(document.messageform);"/>
+   <input id="saveForm" onclick="return valid_memoryform(document.messageform);" name="saveForm" class="inr_btn" type="submit" value="Save"/>
+   <input id="saveForm" onclick="return valid_memoryform(document.messageform);" name="saveForm" class="inr_btn" type="submit" value="Send"/>
+  ',$tp);
+ $tp=str_replace("{tab_name}",'<span>New</span>',$tp);
+}
+
+$tp=str_replace("{RECEIVED}","<a href='memories.php?stype=2&order=$order#page=page-2' ".$classR .">Inbox</a>",$tp);
+$tp=str_replace("{SENT}","<a href='memories.php?stype=1&order=$order#page=page-2' ".$classS .">Sent</a>",$tp);
+$tp=str_replace("{DRAFT}","<a href='memories.php?stype=0&order=$order#page=page-2' ".$classD .">Draft</a>",$tp);
+$tp=str_replace("{PERSONAL}","<a href='memories.php?stype=3&order=$order#page=page-2' ".$classP .">Personal</a>",$tp);
+$tp=str_replace("{stype}",$send_type,$tp);
+$tp=str_replace("{STYPE}",$send_type,$tp);
+$tp=str_replace("{TOT_SENT}",$tot_sent,$tp);
+$tp=str_replace("{TOT_RECEIVED}",$tot_received,$tp);
+$tp=str_replace("{MESSAGES}",$res,$tp);
+$tp=str_replace("{SENT_CHT}",$sent_cht,$tp);
+$tp=str_replace("{REC_CHT}",$rec_cht,$tp);
+$tp=str_replace("{IMG_URL}",IMG_ROOT,$tp);
+$tp=str_replace("{MAIN_ROOT}",MAIN_ROOT,$tp);
+$tp=str_replace("{SCRIPT_URL}",SCRIPTS_ROOT,$tp);
+$tp=str_replace("{NO_SESSION}",NO_SESSION,$tp);
+$tp=str_replace("{NO_SESSION_END}",NO_SESSION_END,$tp);
+$tp=str_replace("{LOGIN_PAGE}",USER_MODULE."/login.php",$tp);
+$tp=str_replace("{REGISTER_PAGE}",USER_MODULE."/register.php",$tp);
+$tp=str_replace("{pagerecords}",$pagerecords,$tp);
+
+//memories messages
+$tp=str_replace("{title}",$title,$tp);
+//draft mesages editing
+//echo $message;
+$tp=str_replace("{DRAFTID}",$my_arrdraft['id'],$tp);
+$tp=str_replace("{MESSAGE}",$draftmessage,$tp);
+$tp=str_replace("{DATE}",$draftdate,$tp);
+$tp=str_replace("{stype}",$stype,$tp);
+$tp=str_replace("{INTENSITY}",$draftmessage_intensity,$tp);
+$tp=str_replace("{REC_NAME}",$my_arrdraft['name'],$tp);
+$tp=str_replace("{REC_EMAIL}",$my_arrdraft['email'],$tp);
+$tp=str_replace("{EMOTION}",$my_arrdraft['message_color_id'],$tp);
+$tp=str_replace("{ATTACH}",$resattach,$tp);
+
+/*--------*/
+//echo $keyword;
+$tp=str_replace("{keyword}",$keyword,$tp);
+$tp=str_replace("{fromdate}",$fromdate,$tp);
+$tp=str_replace("{todate}",$todate,$tp);
+//echo $res1;
+$tp=str_replace("{PAGING}",$res1,$tp);
+//echo "hi";exit;rec_cht
+echo $tp;
+require_once(SITE_ROOT."includes/footer.php");
+?>

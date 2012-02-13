@@ -1,0 +1,15 @@
+<?php
+define(SITE_ROOT,$_SERVER['DOCUMENT_ROOT']."/emirror/");
+include(SITE_ROOT.'/inc/config.inc.php');
+$email=$_GET['email'];
+$password=md5($_GET['pwd']);
+$log=$db->checkloginconfirm($email,$password);
+if($log=="yes")
+{
+header("Location:".SITE_HOST.USER_MODULE."/confirm_success.php");
+}
+else
+{
+header("Location:".SITE_HOST.USER_MODULE."/confirm_error.php");
+}
+?>

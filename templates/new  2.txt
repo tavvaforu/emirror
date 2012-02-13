@@ -1,0 +1,36 @@
+   <div class="innerdiv">
+    <div class="content" id="page-1">
+    <div class="dailytriggertabs">
+   <form action="index.php?file=u-feedback" name="feedbackform" method="POST" enctype="multipart/form-data">
+   <input type="hidden" name="alid" value="{ALBUM_ID}">
+    <input type="hidden" name="mode" id="mode" value="{MODE}">
+	<input type="hidden" name="Aphoto" value="{ALBUMPHOTO}">
+	
+      <span style="color:#F00;font-weight:bold">{MSG}</span></div>
+
+	  <div class="clear"></div>
+    <div style="width:500px; float:left; padding:10px 0;">	
+	<h3>Feedback</h3><br>
+	<span>Name:&nbsp;&nbsp;</span>
+	<input type="text" name="name" size="50" class="medium" id="name" value="" />
+	</br></br>
+<span>Email:&nbsp;&nbsp;</span>
+	<input type="text" name="email" size="50" class="medium" id="email" value="" />
+	</br></br>
+<span>Subject:&nbsp;&nbsp;</span>
+	<input type="text" name="subject" size="50" class="medium" id="subject" value="" />
+	</br></br>
+      <span style="vertical-align:text-top;">Message&nbsp;&nbsp;</span>
+	<textarea name="message" id="message" rows="7" cols="40" tabindex="6"></textarea>
+      <br /><br />
+    
+    {BTN}
+        <input id="Cancel" name="Cancel" class="inr_btn" type="button" value="Cancel" onclick="window.location.href='index.php?file=m-messages';" />
+    </div>
+    </form>
+    <div class="clear"></div>
+    </div>
+    </div>
+   </div>
+
+ </div>
