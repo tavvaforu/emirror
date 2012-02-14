@@ -277,7 +277,7 @@ font-weight: normal;
 text-decoration: underline;" href="javascript:addFileInput();">Attach another File</a></div>
 
 
-
+<!--
 </li>
 
    <li id="foli1" class="complex" style="margin-top:15px;">
@@ -311,7 +311,7 @@ text-decoration: underline;" href="javascript:addFileInput();">Attach another Fi
 
     </span>
 
-</li>
+</li>-->
 
    <br/><br/>   
 
