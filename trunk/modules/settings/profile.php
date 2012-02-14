@@ -143,7 +143,7 @@ if(count($memdata)>0)
 for($i=1;$i<=count($memdata);$i++){
 $ii=$i-1;
 	$med.='<div id="TextBoxDiv'.$i.'" class="field">
-			<label for="fname">Secondary Email'.$i.' : </label>
+			<label for="fname">Alternative Email'.$i.' : </label>
 			<input id="textbox'.$i.'" class="xsmall" type="text" value="'.$memdata[$ii]["sec_email"].'" name="sec_email[]"	 size="30">
 		   </div>';
 }
