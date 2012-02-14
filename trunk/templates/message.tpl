@@ -254,7 +254,7 @@ Emotion Type</label>
 
 <label  style="float:left; font-weight:bold;"id="title7" for="Field7">
 
-Intensity(1=low,5=Extreme)</label>
+Intensity(1=Low,5=Extreme)</label>
 
 
       <div class="clear"></div>
