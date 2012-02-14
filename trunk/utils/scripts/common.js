@@ -732,14 +732,14 @@ function checkDelete(id)
 		{return false;}
 	
 }
-function checkblock(id)
+function checkblock(id,sender_id,stype)
 {
 	var actionvalue='Block';
 	ans =confirm("Confirm Block of message from Selected User ?");
 	//alert(ans);return false;
 		if(ans == true)
 		{
-            window.location="index.php?file=m-open_message&action=Block&blid="+id+"#page=page-2";
+            window.location="index.php?file=m-open_message&action=Block&blid="+id+"&stype="+stype+"&sender_id="+sender_id+"#page=page-2";
 			
 		}
 		else
