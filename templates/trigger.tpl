@@ -277,9 +277,9 @@ font-weight: normal;
 text-decoration: underline;" href="javascript:addFileInput();">Attach another File</a></div>
 
 
-<!--
-</li>
 
+</li>
+<!--
    <li id="foli1" class="complex" style="margin-top:15px;">
 
     <span style="float:left; width:40px;">
