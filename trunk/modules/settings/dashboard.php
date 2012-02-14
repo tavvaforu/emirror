@@ -75,7 +75,7 @@ $tflag="";
 $res.='<ul>';
 $res.='<li id="foli0" >
 <div style="width:500px; float:left">
-<span style="padding-left:5px; width:60px; float:left;"> <strong>Expressions</strong></span>
+<span style="padding-left:5px; width:80px; float:left;"> <strong>Expressions</strong></span>
 <span style="padding-left:5px; width:50px; float:left;">
 <input id="message" name="message" type="radio" class="field radio" value="1" ';
 if($dmessage==1){
@@ -91,7 +91,7 @@ $res.=' checked';
 $res.='/><label class="choice" for="Field0_0" > No</label> </span>
 <br />
 
-<div style="width:300px; padding-left:70px; padding-top:10px; float:left;">
+<div style="width:300px; padding-left:90px; padding-top:10px; float:left;">
 <span style="padding-left:5px; width:120px; float:left;"> Expressions received</span>
 <span style="padding-left:5px; width:50px; float:left;"><input id="msummary" name="msummary" type="radio" class="field radio" value="1" '.$mflag;
 if($dmsummary==1){
@@ -105,7 +105,7 @@ $res.=' checked';
 $res.='/><label class="choice" for="Field0_0" > No</label> </span>
 </div>
 
-<div style="width:300px; padding-left:70px; padding-top:10px; float:left;">
+<div style="width:300px; padding-left:90px; padding-top:10px; float:left;">
 <span style="padding-left:5px; width:120px; float:left;"> Expressions Sent </span>
 <span style="padding-left:5px; width:50px; float:left;"><input id="mSent" name="mSent" type="radio" class="field radio" value="1" '.$mflag;
 if($dmSent==1){
