@@ -254,7 +254,7 @@ Emotion Type</label>
 
 <label  style="float:left; font-weight:bold;"id="title7" for="Field7">
 
-Intensity</label>
+Intensity(1=low,5=Extreme)</label>
 
 
       <div class="clear"></div>
@@ -289,8 +289,8 @@ Intensity</label>
         <div style="width: 55px;float:left;" alt="Low" title="Low">1</div> 
         <div style="width: 55px;float:left;" title="Moderate" alt="Moderate">2</div>
         <div style="width: 60px;float:left;" title="High" alt="High">3</div>
-        <div style="width:35px;float:left;" title="very High" alt="very High">4</div>
-        <div style="width:10px;float:right;" title="Extream" alt="Extream">5</div>
+        <div style="width:35px;float:left;" title="Very High" alt="very High">4</div>
+        <div style="width:10px;float:right;" title="Extreme" alt="Extream">5</div>
      </div>    
       <br />
 
