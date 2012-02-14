@@ -213,7 +213,7 @@
 <label style="width:450px; float:left; font-weight:bold;" id="title7" for="Field7">
 Emotion Type</label>
 <label  style="float:left; font-weight:bold;"id="title7" for="Field7">
-Intensity</label>
+Intensity(1=Low,5=Extreme)</label>
       <div class="clear"></div>
       <div class="colorbg" style="margin-left:0px;">
 		<ul id="mycolorband">
