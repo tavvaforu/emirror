@@ -245,7 +245,7 @@ else{
 $flag5="";
 }
 if($rel_type==7){
-$flag5="selected";
+$flag6="selected";
 }
 else{
 $flag6="";
