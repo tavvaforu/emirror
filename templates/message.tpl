@@ -432,7 +432,7 @@ text-decoration: underline;" href="javascript:addFileInput();">Attach another Fi
 
 <div class="editr">  {PAGING}</div>
 
-<div class="mlinks">{RECEIVED} l  {SENT} l {DRAFT}  </div>
+<div class="mlinks">{RECEIVED} l  {SENT} l {DRAFT} {PERSONAL} </div>
 
 <span><font color="red"><b>{msg}</b></font></span>
 
