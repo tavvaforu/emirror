@@ -7,6 +7,21 @@ $tp = $tpl_object->getContent();
 $id=$_GET['id'];
 $iId=$_POST['iId'];
 $stype=$_GET['stype'];
+if(isset($_GET['action']) && $_GET['action'] == "Block")
+{
+	//echo '<pre>';print_r($_GET);exit;
+	$frm_id = $_GET['sender_id'];
+	
+	$rowEmails = mysql_fetch_array(mysql_query("select email from members where member_id =$frm_id"));
+	$rowEmailId = $rowEmails['email'];
+	$blid = $_GET['blid'];
+	$session_id = $_SESSION["sess_memberid"];
+	$sql="insert into member_status(ito_memid,ifrom_memid,mem_status,createdtime)values('$frm_id','$session_id',1,'".date('Y-m-d H:i:s')."')";
+	mysql_query($sql);
+	$msg = "Blocked the messages from ".$rowEmailId;
+	header("location:index.php?file=m-messages&stype=$stype&msg=$msg#page=page-2");
+
+}
 if($_POST['saveForm']=="Delete")
 {
 $stype=$_POST['stype'];
@@ -34,7 +49,13 @@ if(isset($_GET['action']) && $_GET['action']=="Remove")
 }
 $my_res=mysql_query("select a.*,b.message_intensity as color_id from messagetrigger a,message_intensity b where a.message_color_id=b.id and a.id='$id'");
 $my_arr=mysql_fetch_array($my_res);
+$senderMailId = $my_arr['sender_email'];
 //echo '<pre>';print_r($my_arr);exit;
+//echo "select * from member where email ='$senderMailId'";exit;
+$sender_query = mysql_query("select member_id from members where email ='$senderMailId'");
+$senderIdDetails = mysql_fetch_array($sender_query);
+//echo '<pre>';print_r($senderIdDetails);exit;
+$sender_id = $senderIdDetails['member_id'];
 $id=$my_arr['id'];
 $message=$my_arr['message'];
 $id=$my_arr['id'];
@@ -87,8 +108,8 @@ $senderdetails.='<label class="desc" id="title1" for="Field1" style="margin-top:
 }
 if($stype==2)
 {
-  $tp=str_replace("{blbtn}",'<input  id="saveForm" name="saveForm" class="inr_btn" type="button" value="Block" onclick="return checkblock('.$id.')";/> 
-		  <input  id="saveForm" name="saveForm" class="inr_btn" type="button" value="Unblock" onclick="return checkunblock('.$id.')";/>',$tp);
+  $tp=str_replace("{blbtn}",'<input  id="saveForm" name="saveForm" class="inr_btn" type="button" value="Block" onclick="return checkblock('.$id.','.$sender_id.','.$stype.')";/> 
+		  ',$tp);
 }
 else{
 $tp=str_replace("{blbtn}",'',$tp);

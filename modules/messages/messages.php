@@ -22,6 +22,23 @@ $db=new myclass;
 
 $db->myconnect();
 
+///Added by harinath
+/////Unblock the inbox messages
+if(isset($_GET['action']) && $_GET['action'] == "unblock")
+{
+	//echo '<pre>';print_r($_GET);exit;
+	$stypeub = $_GET['stype'];
+	$orderub = $_GET["order"];
+	$session_idub = $_SESSION["sess_memberid"];
+	$sql="delete from member_status where ifrom_memid=$session_idub";
+	$msg = "Unblocked the messages";
+	//exit;
+	mysql_query($sql);
+	header("location:index.php?file=m-messages&stype=2&order=create_time&msg=$msg#page=page-2");
+
+}
+////End
+
 
 ///check for displaying Inbox based on received 
 $sql_profile_settings=mysql_query("select * from profile where user_id='".$_SESSION['sess_memberid']."'");
@@ -81,12 +98,13 @@ $tp = $tpl_object->getContent();
 
 
 $blockedusers=$db->getblockedemails();
+//echo '<pre>';print_r($blockedusers);exit;
 if(count($blockedusers)>0){
 $blmail=implode(",",$blockedusers);
 //Blocked by harinath ..
 //$blocksql=" and sender_email not in(".$blmail.")";
 //end....
-$blocksql=" and 1=1";
+$blocksql =" and sender_email not in(".$blmail.")";
 }
 else{
 $blocksql=" and 1=1";
@@ -1434,9 +1452,16 @@ $tp=str_replace("{RECEIVED}",$received,$tp);
 
 $tp=str_replace("{SENT}",$sent,$tp);
 
+if($send_type == 2)
+{
+	$tp=str_replace("{PERSONAL}","l <a href='javascript:void(0);' onclick='return checkunblock(2);' ".$classP .">Unblock</a>",$tp);
+} else {
+	$tp=str_replace("{PERSONAL}","",$tp);
+}
+
 $tp=str_replace("{DRAFT}","<a href='index.php?file=m-messages&stype=0&order=$order#page=page-2' ".$classD .">Draft</a>",$tp);
 
-$tp=str_replace("{PERSONAL}","<a href='index.php?file=m-messages&stype=3&order=$order#page=page-2' ".$classP .">Personal</a>",$tp);
+//$tp=str_replace("{PERSONAL}","<a href='index.php?file=m-messages&stype=3&order=$order#page=page-2' ".$classP .">Personal</a>",$tp);
 
 $tp=str_replace("{stype}",$send_type,$tp);
 
