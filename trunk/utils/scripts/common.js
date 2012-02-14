@@ -746,6 +746,20 @@ function checkblock(id,sender_id,stype)
 		{return false;}
 	
 }
+function checkunblock(stype)
+{
+	var actionvalue='Block';
+	ans =confirm("Confirm Unblock of messages from Blocked Users ?");
+	//alert(ans);return false;
+		if(ans == true)
+		{
+            window.location="index.php?file=m-messages&stype="+stype+"&action=unblock#page=page-2";
+			
+		}
+		else
+		{return false;}
+	
+}
 function removefile(id,iid)
 {
 //alert(id);return false;
