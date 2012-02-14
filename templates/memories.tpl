@@ -261,6 +261,7 @@ padding: 0 0 0 0px;
 font-weight: normal;
 text-decoration: underline;" href="javascript:addFileInput();">Attach another File</a></div>
 </li>
+<!--
 <li id="foli1" class="complex" style="margin-top:15px;">
     <span style="float:left; width:40px;">
      <label class="desc" id="title7" for="Field7">Share</label>
@@ -277,7 +278,7 @@ text-decoration: underline;" href="javascript:addFileInput();">Attach another Fi
      <input id="Field0_0" name="Field0" type="radio" class="field radio" value="Daily : $129" tabindex="1" checked="checked"  />
      <label class="choice" for="Field0_0" >None</label>
     </span>
-</li>
+</li>-->
 <br /> 
  <br /> 
  <li class="buttons ">
