@@ -244,7 +244,12 @@ $flag5="selected";
 else{
 $flag5="";
 }
-
+if($rel_type==7){
+$flag5="selected";
+}
+else{
+$flag6="";
+}
 $reltype='     <div class="field">
 
 								<label for="type">Relationship Type </label>
@@ -264,6 +269,8 @@ $reltype='     <div class="field">
                                         <option value="5" '.$flag4.' >In a domestic partnership</option>
 
                                         <option value="6" '.$flag5.' >In a civil union</option>
+                                        
+                                        <option value="7" '.$flag6.' >Married</option>
 
 								</select>
 							</div>';
