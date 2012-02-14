@@ -328,7 +328,7 @@ text-decoration: underline;" href="javascript:addFileInput();">Attach another Fi
 
 
 </li>
-
+<!--
 <li id="foli1" class="complex" style="margin-top:15px;">
 
     <span style="float:left; width:40px;">
@@ -359,7 +359,7 @@ text-decoration: underline;" href="javascript:addFileInput();">Attach another Fi
      <label class="choice" for="Field0_0" >None</label>
 
     </span>
-</li>
+</li>-->
 
 <br />
 
