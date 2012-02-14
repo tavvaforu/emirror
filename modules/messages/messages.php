@@ -1401,7 +1401,7 @@ if($_GET['id']!=""){
 
 $ur='index.php?file=m-messages&stype=0#page=page-2';
 }else{
-$ur='index.php?file=m-messages#page=page-2';
+$ur='index.php?file=m-messages#page=page-1';
 }
 $btn='<input id="saveForm" onclick="javascript:window.location=\''.$ur.'\';" name="saveForm" class="inr_btn" type="button" value="Cancel"/>';
 
