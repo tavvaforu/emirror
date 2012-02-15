@@ -239,10 +239,7 @@ Intensity(1=Low, 5=Extreme)</label>
     <label class="desc" style="margin:10px 0 5px 0;">Title</label>
 <input id="title_memory" name="title_memory" type="text" class="field text addr" value="{title}" tabindex="8" style="width:510px;  margin-bottom:20px;"/>
 <br />
-<label class="desc" id="title1" for="Field1">
-Details | <span >
-Voice Recorder</span>
-<span style="width:100px; float:left;"> <input id="" name="" class="v_icon" type="button" value=""/></span></label>
+<label class="desc" id="title1" for="Field1">Details </label>
 <div style="margin-top:5px;">
 <span class="full addr1">
 <textarea name="message" cols="62" class="fromfiletextarea" style="height:100px; overflow:auto;" id="message" tabindex="6">{MESSAGE}</textarea>

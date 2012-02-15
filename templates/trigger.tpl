@@ -242,10 +242,7 @@
 
      <input id="title_trigger" name="title_trigger" type="text" class="field text addr" value="{title_trigger}" tabindex="8" style="width:510px; margin-bottom:20px;"/>
      <br />
-     <label class="desc" id="title1" for="Field1">Details | <span>Voice Recorder</span>
-     <span style="width:100px; float:left;"> <input id="" name="" class="v_icon" type="button" value=""/></span>
-   
-   </label>
+     <label class="desc" id="title1" for="Field1">Details</label>
 
    <div style="margin-top:5px;">
     <span class="full addr1">
