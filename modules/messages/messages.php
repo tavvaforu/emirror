@@ -1001,7 +1001,7 @@ $my_res=mysql_query("select a.*,b.message_intensity as color_id from messagetrig
 //echo "select * from messagetrigger where message_type_id='3' and send_type='$send_type'  and status!='Deleted'";
 
 //echo mysql_num_rows($my_res);exit;
-echo mysql_num_rows($my_res);
+//echo mysql_num_rows($my_res);
 ///check for displaying Inbox based on received 
 $sql_profile_settings=mysql_query("select * from profile where user_id='".$_SESSION['sess_memberid']."'");
 $inboxSettings=mysql_fetch_array($sql_profile_settings);
