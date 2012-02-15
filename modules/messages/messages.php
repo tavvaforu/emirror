@@ -1479,7 +1479,7 @@ if($send_type == 2)
 
 $tp=str_replace("{DRAFT}","<a href='index.php?file=m-messages&stype=0&order=$order#page=page-2' ".$classD .">Draft</a>",$tp);
 
-$tp=str_replace("{PERSONAL}","l <a href='index.php?file=m-messages&stype=2&show=unblock&order=$order#page=page-2' ".$classP .">Block</a>",$tp);
+$tp=str_replace("{PERSONAL}","l <a href='index.php?file=m-messages&stype=2&show=unblock&order=$order#page=page-2' ".$classP .">Unblock</a>",$tp);
 //$tp=str_replace("{PERSONAL}","<a href='index.php?file=m-messages&stype=3&order=$order#page=page-2' ".$classP .">Personal</a>",$tp);
 
 $tp=str_replace("{stype}",$send_type,$tp);
