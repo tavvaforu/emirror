@@ -144,7 +144,7 @@
 <li id="foli1" class="complex">
 
 <div style="margin:0 0 10px 0; padding:0; width:400px">
-<input onclick="window.location.href='index.php?file=m-messages&stype={stype}#page=page-2';" id="saveForm" name="saveForm" class="inr_btn" type="button" value="Back to View" /> 
+<input onclick="window.location.href='index.php?file=m-messages&show={show}&stype={stype}#page=page-2';" id="saveForm" name="saveForm" class="inr_btn" type="button" value="Back to View" /> 
   <input  id="saveForm" name="saveForm" class="inr_btn" type="submit" value="Delete" /> 
 {blbtn}
 </div>

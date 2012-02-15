@@ -408,7 +408,7 @@ text-decoration: underline;" href="javascript:addFileInput();">Attach another Fi
 
     <input id="todate" name="todate" type="text" class="field text ln" value="{todate}" size="12" tabindex="3" readonly="readonly" />&nbsp;<a href="#" style="margin-right:10px;" id="f_btn2"><img src="{IMG_URL}cal31.gif" width="16" height="16" /></a>
 
-	<input  id="saveForm" name="saveForm" class="inr_btn" type="button" value="Go" onclick="return valid_search('index.php?file=m-messages&stype={stype}');"/>
+	<input  id="saveForm" name="saveForm" class="inr_btn" type="button" value="Go" onclick="return valid_search('index.php?file=m-messages&stype={stype}',{unblockGo});"/>
 
    </fieldset>
 
@@ -693,9 +693,14 @@ function addFileInput() {
 
 //alert(document.frmsearch.keyword.value);
 
-function valid_search(actPath)
+function valid_search(actPath,unblock)
 
 {
+	if(unblock == 1)
+	{
+		alert('Serach is disabled for unbloked expressions');
+		return false;
+	}
 
 	/*if(document.frmsearch.fromdate.value=="" && document.frmsearch.keyword.value=="" && document.frmsearch.todate.value=="")
 
