@@ -7,6 +7,13 @@ $tp = $tpl_object->getContent();
 $id=$_GET['id'];
 $iId=$_POST['iId'];
 $stype=$_GET['stype'];
+if($_GET['show'] == 'unblock')
+{
+	$show = $_GET['show'];
+} else {
+	$show = 'normal';
+}
+$tp=str_replace("{show}",$show,$tp);
 if(isset($_GET['action']) && $_GET['action'] == "Block")
 {
 	//echo '<pre>';print_r($_GET);exit;
@@ -18,8 +25,8 @@ if(isset($_GET['action']) && $_GET['action'] == "Block")
 	$session_id = $_SESSION["sess_memberid"];
 	$sql="insert into member_status(ito_memid,ifrom_memid,mem_status,createdtime)values('$frm_id','$session_id',1,'".date('Y-m-d H:i:s')."')";
 	mysql_query($sql);
-	$msg = "Blocked the messages from ".$rowEmailId;
-	header("location:index.php?file=m-messages&stype=$stype&msg=$msg#page=page-2");
+	$msg = "Blocked the expressions from ".$rowEmailId;
+	header("location:index.php?file=m-messages&show=$show&stype=$stype&msg=$msg#page=page-2");
 
 }
 if($_POST['saveForm']=="Delete")
@@ -29,7 +36,7 @@ $stype=$_POST['stype'];
  $msg="Record deleted succesfully";
   $tp=str_replace("{msg}",$msg,$tp);
   //echo "messages.php?stype=$stype&msg=$msg#page=page-2";
- header("location:index.php?file=m-messages&stype=$stype&msg=$msg#page=page-2");
+ header("location:index.php?file=m-messages&show=$show&stype=$stype&msg=$msg#page=page-2");
 // header("location:messages.php?stype=$stype&msg=$msg#page=page-2");
  //exit;
 }
@@ -45,7 +52,7 @@ if(isset($_GET['action']) && $_GET['action']=="Remove")
    $msg="Attachment deleted succesfully";
    
    $tp=str_replace("{msg}",$msg,$tp);
-   header("location:index.php?file=m-open_message&id=$iid&stype=2&msg=$msg#page=page-2");
+   header("location:index.php?file=m-open_message&show=$show&id=$iid&stype=2&msg=$msg#page=page-2");
 }
 $my_res=mysql_query("select a.*,b.message_intensity as color_id from messagetrigger a,message_intensity b where a.message_color_id=b.id and a.id='$id'");
 $my_arr=mysql_fetch_array($my_res);
@@ -106,7 +113,8 @@ $senderdetails.='<label class="desc" id="title1" for="Field1" style="margin-top:
 </label>';
 
 }
-if($stype==2)
+//echo $show;exit;
+if($stype==2 && $show=='normal')
 {
   $tp=str_replace("{blbtn}",'<input  id="saveForm" name="saveForm" class="inr_btn" type="button" value="Block" onclick="return checkblock('.$id.','.$sender_id.','.$stype.')";/> 
 		  ',$tp);
