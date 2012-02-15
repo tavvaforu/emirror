@@ -273,15 +273,7 @@ Intensity(1=Low,5=Extreme)</label>
 
 <br />
 
-<label class="desc" id="title1" for="Field1">
-
-Details | <span >
-
-
-
-Voice Recorder</span>
-
-<span style="width:100px; float:left;"> <input id="" name="" class="v_icon" type="button" value=""/></span></label>
+<label class="desc" id="title1" for="Field1">Details </label>
 
 
 
