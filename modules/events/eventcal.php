@@ -149,7 +149,7 @@ $tp=str_replace("{dsImage}",$dsImage,$tp);
 
 </body>
 </html>
- <script type="text/javascript" src="http://emirror.vdevserver.co.cc/emirror/utils/scripts/dropdown.js"></script>
+ <script type="text/javascript" src="{SCRIPT_URL}dropdown.js"></script>
 
 <script type="text/javascript">
 cssdropdown.startchrome("chromemenu")
