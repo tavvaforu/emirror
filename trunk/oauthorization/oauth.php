@@ -21,7 +21,7 @@
 <?php
 $client_id = '1025488513849.apps.googleusercontent.com';
 $client_secret = 'FEex00C4SwhsHYeu3DyANBLN';
-$redirect_uri = 'http://stage.emotionsmirror.com/goauth/oauth.php';
+$redirect_uri = 'http://stage.emotionsmirror.com/oauthorization/oauth.php';
 $max_results = 25;
 
 $auth_code = $_GET["code"];
