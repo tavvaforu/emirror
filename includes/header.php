@@ -159,8 +159,8 @@ alert('Post was not published.');
 
 <!--1st drop down menu -->                                                   
 <div id="dropmenu1" class="dropmenudiv">
-<a href="#">Account Settings</a>
-<a href="#">Privacy Settings</a>
+<!--<a href="#">Account Settings</a>-->
+<!--<a href="#">Privacy Settings</a>-->
 <a href="index.php?file=u-chpass">Change Password</a>
 <a href="index.php?file=u-logout">Logout</a>
 <a href="#">Help Center</a>
