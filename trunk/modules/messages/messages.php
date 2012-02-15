@@ -31,7 +31,7 @@ if(isset($_GET['action']) && $_GET['action'] == "unblock")
 	$orderub = $_GET["order"];
 	$session_idub = $_SESSION["sess_memberid"];
 	$sql="delete from member_status where ifrom_memid=$session_idub";
-	$msg = "Unblocked the messages";
+	$msg = "Unblocked the expressions.";
 	//exit;
 	mysql_query($sql);
 	header("location:index.php?file=m-messages&stype=2&order=create_time&msg=$msg#page=page-2");
@@ -97,17 +97,33 @@ $tp = $tpl_object->getContent();
 //$sql_block=mysql_query("select ito_memid from member_status where ifrom_memid='".$_SESSION['sess_memberid']."'");
 
 
-$blockedusers=$db->getblockedemails();
+
 //echo '<pre>';print_r($blockedusers);exit;
-if(count($blockedusers)>0){
+$blockedusers=$db->getblockedemails();
 $blmail=implode(",",$blockedusers);
-//Blocked by harinath ..
-//$blocksql=" and sender_email not in(".$blmail.")";
-//end....
-$blocksql =" and sender_email not in(".$blmail.")";
-}
-else{
-$blocksql=" and 1=1";
+if($_GET['show'] == 'unblock')
+{
+	$show = $_GET['show'];
+	$unblockGo = 1;
+	if(count($blockedusers)>0){
+		
+		$blocksql =" and sender_email in(".$blmail.")";
+	} else {
+		$blocksql =" and 1=1";
+	}
+} else {
+	if($_GET['show']=='')
+	{
+		$show = 'normal';
+	} else {
+		$show = $_GET['show'];
+	}
+	$unblockGo = 0;
+	if(count($blockedusers)>0){
+		$blocksql=" and sender_email not in(".$blmail.")";
+	} else {
+		$blocksql =" and 1=1";
+	}
 }
 if(isset($_GET['id']) && $_GET['id']!="")
 
@@ -279,7 +295,9 @@ while($my_colors1=mysql_fetch_array($colorsQuery1))
 {
 
 	
+//echo "SELECT message_color_id FROM messagetrigger  where  email='$tmail' and send_type=1 and status!='SDeleted' and status!='Deleted' $blocksql and  anonymous='0' and 
 
+//message_color_id=".$my_colors1['id'];exit;
 	$ch1=mysql_query("SELECT message_color_id FROM messagetrigger  where  email='$tmail' and send_type=1 and status!='SDeleted' and status!='Deleted' $blocksql and  anonymous='0' and 
 
 message_color_id=".$my_colors1['id']);
@@ -883,7 +901,7 @@ if($send_type==2)
 
   }$stype=$_POST['stype'];
 
-  header("location:index.php?file=m-messages&stype=$stype&msg=$msg#page=page-2");
+  header("location:index.php?file=m-messages&stype=$stype&msg=$msg&show=$show#page=page-2");
 
 }
 
@@ -1008,14 +1026,14 @@ $inboxSettings=mysql_fetch_array($sql_profile_settings);
 if($inboxSettings['messages_summary'] == 1)
 {
 	$showInbox = 1;
-	$received = "<a href='index.php?file=m-messages&stype=2&order=$order#page=page-2' ".$classR .">Inbox</a>";
+	$received = "<a href='index.php?file=m-messages&stype=2&order=$order&show=normal#page=page-2' ".$classR .">Inbox</a>";
 } else {
 	$showInbox = 0;
 	//$received = "<a href='javascript:void(0);' ".$classR ." onclick='javascript:alert(\"You currently disabled this feature\");'>Inbox</a>";
 }
 if($inboxSettings['messages_sharing'] == 1)
 {
-	$sent = "<a href='index.php?file=m-messages&stype=1&order=$order#page=page-2' ".$classS .">Sent</a>";
+	$sent = "<a href='index.php?file=m-messages&stype=1&order=$order&show=$show#page=page-2' ".$classS .">Sent</a>";
 	$showSent = 1;
 } else {
 	//$sent = "<a href='javascript:void(0);' ".$classS ."  onclick='javascript:alert(\"You currently disabled this feature\");'>Sent</a>";
@@ -1170,8 +1188,8 @@ $res.='	<span style="float:left;margin:0px 0px 5px 0px; padding:0px; width:150px
    } 
 
    else {
-
-  $res.='<a href="index.php?file=m-open_message&stype='.$send_type.'&id='.$id.'">'.$message.'</a></label>';
+	
+  $res.='<a href="index.php?file=m-open_message&show='.$show.'&stype='.$send_type.'&id='.$id.'">'.$message.'</a></label>';
 
   }
 
@@ -1239,7 +1257,7 @@ if(isset($_GET['stype']))
 
 {
 
-	if($_GET['stype'] == 2)
+	if($_GET['stype'] == 2 && $_GET['show']!='unblock')
 
 	{
 
@@ -1275,7 +1293,7 @@ if(isset($_GET['stype']))
 
 	}
 
-	if($_GET['stype'] == 3)
+	if($_GET['stype'] == 2 && $_GET['show']=='unblock')
 
 	{
 
@@ -1293,7 +1311,7 @@ if(isset($_GET['stype']))
 
 }
 
-$res1='<a href="index.php?file=m-messages&stype='.$send_type.'#page=page-2">All</a>&nbsp;&nbsp;&nbsp;';
+$res1='<a href="index.php?file=m-messages&show='.$show.'&stype='.$send_type.'#page=page-2">All</a>&nbsp;&nbsp;&nbsp;';
 
 $res1.= $pagerecords.paginate_one($reload,$page,$tpages);
 
@@ -1303,7 +1321,7 @@ if($order=="message" && $otype=="a")
 
 {
 
-$tp=str_replace("{MSG_SORT}",'<a href="index.php?file=m-messages&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=message&otype=d#page=page-2" >
+$tp=str_replace("{MSG_SORT}",'<a href="index.php?file=m-messages&show='.$show.'&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=message&otype=d#page=page-2" >
 
 <img src="{IMG_URL}up_arrow.png" width="12" height="6" alt="descendingorder" title="Descending Sort" align="absmiddle"  border="0" /></a>',$tp);
 
@@ -1313,7 +1331,7 @@ else
 
 {
 
-$tp=str_replace("{MSG_SORT}",'<a href="index.php?file=m-messages&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=message&otype=a#page=page-2" >
+$tp=str_replace("{MSG_SORT}",'<a href="index.php?file=m-messages&show='.$show.'&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=message&otype=a#page=page-2" >
 
 <img src="{IMG_URL}down_arrow.png" width="12" height="6" alt="ascendingorder" title="Ascending Sort" align="absmiddle"  border="0" /></a>',$tp);
 
@@ -1323,7 +1341,7 @@ if($order=="$osender" && $otype=="a")
 
 {
 
-$tp=str_replace("{SENDER_SORT}",'<a href="index.php?file=m-messages&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order='.$osender.'&otype=d#page=page-2" >
+$tp=str_replace("{SENDER_SORT}",'<a href="index.php?file=m-messages&show='.$show.'&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order='.$osender.'&otype=d#page=page-2" >
 
 <img src="{IMG_URL}up_arrow.png" width="12" height="6" alt="descendingorder" title="Descending Sort" align="absmiddle"  border="0" /></a>',$tp);
 
@@ -1333,7 +1351,7 @@ else
 
 {
 
-$tp=str_replace("{SENDER_SORT}",'<a href="index.php?file=m-messages&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order='.$osender.'&otype=a#page=page-2" >
+$tp=str_replace("{SENDER_SORT}",'<a href="index.php?file=m-messages&show='.$show.'&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order='.$osender.'&otype=a#page=page-2" >
 
 <img src="{IMG_URL}down_arrow.png" width="12" height="6" alt="ascendingorder" title="Ascending Sort" align="absmiddle"  border="0" /></a>',$tp);
 
@@ -1343,7 +1361,7 @@ if($order=="create_time" && $otype=="a")
 
 {
 
-$tp=str_replace("{TIME_SORT}",'<a href="index.php?file=m-messages&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=create_time&otype=d#page=page-2" >
+$tp=str_replace("{TIME_SORT}",'<a href="index.php?file=m-messages&show='.$show.'&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=create_time&otype=d#page=page-2" >
 
 <img src="{IMG_URL}up_arrow.png" width="12" height="6" alt="descendingorder" title="Descending Sort" align="absmiddle"  border="0" /></a>',$tp);
 
@@ -1353,7 +1371,7 @@ else
 
 {
 
-$tp=str_replace("{TIME_SORT}",'<a href="index.php?file=m-messages&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=create_time&otype=a#page=page-2" >
+$tp=str_replace("{TIME_SORT}",'<a href="index.php?file=m-messages&show='.$show.'&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=create_time&otype=a#page=page-2" >
 
 <img src="{IMG_URL}down_arrow.png" width="12" height="6" alt="ascendingorder" title="Ascending Sort" align="absmiddle"  border="0" /></a>',$tp);
 
@@ -1363,7 +1381,7 @@ if($order=="message_intensity" && $otype=="a")
 
 {
 
-$tp=str_replace("{INTENSITY_SORT}",'<a href="index.php?file=m-messages&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=message_intensity&otype=d#page=page-2" >
+$tp=str_replace("{INTENSITY_SORT}",'<a href="index.php?file=m-messages&show='.$show.'&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=message_intensity&otype=d#page=page-2" >
 
 <img src="{IMG_URL}up_arrow.png" width="12" height="6" alt="descendingorder" title="Descending Sort" align="absmiddle"  border="0" /></a>',$tp);
 
@@ -1373,7 +1391,7 @@ else
 
 {
 
-$tp=str_replace("{INTENSITY_SORT}",'<a href="index.php?file=m-messages&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=message_intensity&otype=a#page=page-2" >
+$tp=str_replace("{INTENSITY_SORT}",'<a href="index.php?file=m-messages&show='.$show.'&stype='.$send_type.'&keyword='.$keyword.'&fromdate='.$fromdate.'&todate='.$todate.'&order=message_intensity&otype=a#page=page-2" >
 
 <img src="{IMG_URL}down_arrow.png" width="12" height="6" alt="ascendingorder" title="Ascending Sort" align="absmiddle"  border="0" /></a>',$tp);
 
@@ -1432,7 +1450,7 @@ $inboxSettings=mysql_fetch_array($sql_profile_settings);
 if($inboxSettings['messages_summary'] == 1)
 {
 	$showInbox = 1;
-	$received = "<a href='index.php?file=m-messages&stype=2&order=$order#page=page-2' ".$classR .">Inbox</a>";
+	$received = "<a href='index.php?file=m-messages&show=normal&stype=2&order=$order#page=page-2' ".$classR .">Inbox</a>";
 } else {
 	$showInbox = 0;
 	$received = "<a href='javascript:void(0);' ".$classR ." onclick='javascript:alert(\"You currently disabled this feature\");'>Inbox</a>";
@@ -1454,13 +1472,14 @@ $tp=str_replace("{SENT}",$sent,$tp);
 
 if($send_type == 2)
 {
-	$tp=str_replace("{PERSONAL}","l <a href='javascript:void(0);' onclick='return checkunblock(2);' ".$classP .">Unblock</a>",$tp);
+	//$tp=str_replace("{PERSONAL}","l <a href='javascript:void(0);' onclick='return checkunblock(2);' ".$classP .">Unblock</a>",$tp);
 } else {
-	$tp=str_replace("{PERSONAL}","",$tp);
+	//$tp=str_replace("{PERSONAL}","",$tp);
 }
 
 $tp=str_replace("{DRAFT}","<a href='index.php?file=m-messages&stype=0&order=$order#page=page-2' ".$classD .">Draft</a>",$tp);
 
+$tp=str_replace("{PERSONAL}","l <a href='index.php?file=m-messages&stype=2&show=unblock&order=$order#page=page-2' ".$classP .">Unblock</a>",$tp);
 //$tp=str_replace("{PERSONAL}","<a href='index.php?file=m-messages&stype=3&order=$order#page=page-2' ".$classP .">Personal</a>",$tp);
 
 $tp=str_replace("{stype}",$send_type,$tp);
@@ -1530,7 +1549,10 @@ $tp=str_replace("{motion}",$emotion,$tp);
 /*--------*/
 
 //echo $keyword;
-
+////Disable Go for unblock
+$tp=str_replace("{unblockGo}",$unblockGo,$tp);
+ 
+//End
 $tp=str_replace("{keyword}",$keyword,$tp);
 
 $tp=str_replace("{fromdate}",$fromdate,$tp);
