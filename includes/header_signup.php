@@ -32,7 +32,7 @@
 		 <label for="Remember">         Remember me</label>
          </div>
          <div class="forgotpasssword"> <a href="index.php?file=u-fgtpass">Forgot Password?</a></div>
-          <div class="signup"><a href="index.php?file=u-signup">Sign up</a></div>
+          
        </form>    
     </div>
     </div>
