@@ -1,6 +1,7 @@
 <?php
-require_once("includes/header_signup.php");
-$tpl_object = new Template("templates/article");
+require_once("includes/header.php");
+
+$tpl_object = new Template("templates/articles");
 $tp = $tpl_object->getContent();
 
 $art_id=$_GET['art_id'];
