@@ -149,7 +149,7 @@ alert('Post was not published.');
     <div class="logo_holder">
       <div class="logo"><a href="index.php"><img src="<?php echo IMG_ROOT; ?>logo.png" width="300" height="56" alt="Emotions Mirror" /></a></div>
       <div class="welcomtext">
-    <div class="welcome"><h2>Welcome <?=$_SESSION["sess_firstname"]?></h2>&nbsp;| <a href="index.php?file=u-feedback">Feedback</a>&nbsp;| <a href="helpandforms.html">Help & Forums</a></div>
+    <div class="welcome"><h2>Welcome <?=$_SESSION["sess_firstname"]?></h2>&nbsp;| <a href="index.php?file=u-feedback">Feedback</a>&nbsp;| <a href="index.php?file=fr-refer">Refer Friend</a>&nbsp;| <a href="javascript:void(0);">Help</a></div>
     
 <div class="chromestyle" id="chromemenu">
 <ul>
