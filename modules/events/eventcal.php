@@ -89,7 +89,7 @@ $tp=str_replace("{dsImage}",$dsImage,$tp);
     <div class="favor">
 	<ul>
         <li><a href="index.php?file=s-profile"><img src="<? echo IMG_ROOT;?>profile_pic.gif" width="16" height="16" />Profile</a></li>
-    	<li><a href="dashboard.html"  ><img src="<? echo IMG_ROOT;?>dashboard.gif" width="16" height="16" />Dashboard</a></li>
+    	<li><a href="index.php?file=s-dashboard"  ><img src="<? echo IMG_ROOT;?>dashboard.gif" width="16" height="16" />Dashboard</a></li>
     </ul>
 
    </div>
