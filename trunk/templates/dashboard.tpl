@@ -98,6 +98,13 @@
    <div class="innerdiv">
     <div class="content" id="page-1">
     <div class="dailytriggertabs">
+   <div style="width:700px; padding:10px 0;">
+
+      <div style="width:660px; float:left; padding:5px 10px; background:#eceded; margin-bottom:20px;">
+
+        <span style="font-size:12px; font-weight:bold; color:#0075b7;">Dashboard Settings</span>
+        
+      </div>   <div > <span> <font color="red"><b>&nbsp;&nbsp;&nbsp;{msg}</b></font></span></div>
    <form action="index.php?file=s-dashboard" name="dashboardform" method="POST" enctype="multipart/form-data">
 
   <div class="clear"></div>
