@@ -289,8 +289,8 @@ Intensity(1=Low,5=Extreme)</label>
         <div style="width: 55px;float:left;" alt="Low" title="Low">1</div> 
         <div style="width: 55px;float:left;" title="Moderate" alt="Moderate">2</div>
         <div style="width: 60px;float:left;" title="High" alt="High">3</div>
-        <div style="width:35px;float:left;" title="Very High" alt="very High">4</div>
-        <div style="width:10px;float:right;" title="Extreme" alt="Extream">5</div>
+        <div style="width:35px;float:left;" title="Very High" alt="Very High">4</div>
+        <div style="width:10px;float:right;" title="Extreme" alt="Extreme">5</div>
      </div>    
       <br />
 
