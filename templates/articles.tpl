@@ -183,7 +183,7 @@
 
    
 
-    <div style="width:700px; padding:10px 0;">
+    <div style="width:690px; padding:10px 0;">
 
       <div style="width:660px; float:left; padding:5px 10px; background:#eceded; margin-bottom:20px;">
 
