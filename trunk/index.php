@@ -51,6 +51,9 @@ switch ($prefix){
       case "e":
 		$module = "events";
 		break;
+      case "fr":
+		$module = "referfriend";
+		break;
 	default:
 		$module = "users";
 		break;
