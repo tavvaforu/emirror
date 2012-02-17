@@ -10,7 +10,7 @@
 	?>
            
        </div>
-    <div class="copywrite">&copy; 2011 Emotions Mirror All Rights Reserved</div>
+    <div class="copywrite">&copy; 2011 Emotions Mirror LLC.All Rights Reserved</div>
   </div>
   
 </body>
