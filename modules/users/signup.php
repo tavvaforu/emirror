@@ -125,7 +125,7 @@ $headers .= 'From: emotionsmirror.com <registration@emotionsmirror.com>' . "\r\n
 }
 if($msg!='')
 {
- echo "<script>jAlert('$msg.<br/>A confirmation email was sent to email adress .You must check your email and click the link to confirm your email.');</script>";
+ echo "<script>jAlert('$msg.<br/>A confirmation email was sent to email adress .You must check your email and click the link to confirm your email address.');</script>";
 }
 //end user registeration
 $res=recaptcha_get_html($publickey, $error);
