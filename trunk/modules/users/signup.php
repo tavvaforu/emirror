@@ -44,6 +44,7 @@ if(isset($_POST['Signup']) && $_POST['Signup']=="Signup")
         if (1==1) {
               
 	    $reg=$db->member_register($first_name,$username,$password,$email);
+		mysql_query("insert into profile(user_id)values('".mysql_insert_id()."')");
 		if($reg=="yes")
 			{
 

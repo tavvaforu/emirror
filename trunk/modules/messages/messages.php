@@ -41,8 +41,10 @@ if(isset($_GET['action']) && $_GET['action'] == "unblock")
 
 
 ///check for displaying Inbox based on received 
+//echo "select * from profile where user_id='".$_SESSION['sess_memberid']."'";exit;
 $sql_profile_settings=mysql_query("select * from profile where user_id='".$_SESSION['sess_memberid']."'");
 $inboxSettings=mysql_fetch_array($sql_profile_settings);
+//echo '<pre>';print_r($inboxSettings);exit;
 if($inboxSettings['messages'] == 0)
 {
 	$showExp= 0;
@@ -100,7 +102,11 @@ $tp = $tpl_object->getContent();
 
 //echo '<pre>';print_r($blockedusers);exit;
 $blockedusers=$db->getblockedemails();
-$blmail=implode(",",$blockedusers);
+//echo '<pre>';print_r($blockedusers);exit;
+if(count($blockedusers)>0)
+{
+	$blmail=implode(",",$blockedusers);
+}
 if($_GET['show'] == 'unblock')
 {
 	$show = $_GET['show'];
