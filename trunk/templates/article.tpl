@@ -70,3 +70,8 @@
 
     </div>
     </div>
+
+ <script type="text/javascript" src="{SCRIPT_URL}dropdown.js"></script>
+<script type="text/javascript">
+cssdropdown.startchrome("chromemenu")
+</script>
