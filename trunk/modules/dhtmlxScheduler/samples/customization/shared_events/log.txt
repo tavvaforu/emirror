@@ -27149,3 +27149,13 @@ SELECT  * FROM events_shared WHERE  userId = 35
 
 Done in 0.0044128894805908s
 
+
+
+====================================
+Log started, 16/02/2012 09:02:41
+====================================
+
+SELECT  * FROM events_shared WHERE  userId = 35
+
+Done in 0.0032830238342285s
+
