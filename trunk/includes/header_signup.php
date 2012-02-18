@@ -7,6 +7,7 @@
 
 <script type="text/javascript" src="<?php echo SCRIPTS_ROOT; ?>jquery-1.4.4.min.js"></script>
 <script type="text/javascript" src="<?php echo SCRIPTS_ROOT; ?>jquery.textshadow.js"></script>
+<link href="<?php echo STYLES_ROOT; ?>tab.css" rel="stylesheet" type="text/css" />
 <script src="<? echo SCRIPTS_ROOT;?>jalerts/jquery.alerts.js" type="text/javascript"></script>
 
 <script type="text/javascript" src="<? echo SCRIPTS_ROOT;?>common.js" ></script>
