@@ -1,7 +1,11 @@
 <?php
-require_once("includes/header.php");
+if(!session_is_registered("sess_memberid") || $_SESSION["sess_memberid"] == ""){
+require_once("includes/header_signup.php");
+} else {
+	require_once("includes/header.php");
+}
 
-$tpl_object = new Template("templates/articles");
+$tpl_object = new Template("templates/article");
 $tp = $tpl_object->getContent();
 
 $art_id=$_GET['art_id'];
