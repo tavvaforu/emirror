@@ -11,6 +11,20 @@ div.content.inactive {
 	display: none;
 	width:58%;
 }
+div.content_signup {
+    border: #55acc5 solid 1px;
+    padding: 10px;
+	background:#FFF;
+	width:950px;
+	overflow:hidden;
+	margin:0px 0px 10px 0px;
+   }
+
+div.content_signup.inactive {
+	display: none;
+	width:70%;
+}
+
 div.contentpr {
     border: #55acc5 solid 1px;
     clear: left;
