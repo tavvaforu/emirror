@@ -91,34 +91,32 @@
   </div>
  <!--firstdiv Ends-->
  <!--profiles Starts-->
- <div id="profiles">
-
-  <div class="clear"></div>
-  
+ <div id="profiles">  
    <div class="innerdiv">
     <div class="content" id="page-1">
-    <div class="dailytriggertabs">
-   <div style="width:700px; padding:10px 0;">
+		<div class="dailytriggertabs">
+			   <div style="width:700px; padding:10px 0;">
 
-      <div style="width:660px; float:left; padding:5px 10px; background:#eceded; margin-bottom:20px;">
+						<div style="width:660px; float:left; padding:5px 10px; background:#eceded; margin-bottom:20px;">
+							<span style="font-size:12px; font-weight:bold; color:#0075b7;">Dashboard Settings</span>
+						</div>
+						<div > 
+							<span> <font color="red"><b>&nbsp;&nbsp;&nbsp;{msg}</b></font></span>
+						</div>
+						<form action="index.php?file=s-dashboard" name="dashboardform" method="POST" enctype="multipart/form-data">
 
-        <span style="font-size:12px; font-weight:bold; color:#0075b7;">Dashboard Settings</span>
-        
-      </div>   <div > <span> <font color="red"><b>&nbsp;&nbsp;&nbsp;{msg}</b></font></span></div>
-   <form action="index.php?file=s-dashboard" name="dashboardform" method="POST" enctype="multipart/form-data">
+							<div class="clear"></div>
+							<span style="color:red">{MSG}</span><br /><br />
+							<div style="width:500px; margin:0 auto; padding:0;">
+							{data}
+							<input id="saveForm" name="saveForm" class="inr_btn" type="submit" value="Save"/>
+							</div>
+						</form>
 
-  <div class="clear"></div>
-  <span style="color:red">{MSG}</span><br /><br />
-	<div style="width:500px; margin:0 auto; padding:0;">
-     {data}
-     <input id="saveForm" name="saveForm" class="inr_btn" type="submit" value="Save"/>
-	 </div>
-    </form>
-  
-    </div>
-    </div>
+				</div>
+		</div>
    </div>
-
+</div>
  </div> 
  <!--profiles Ends-->		
  <div class="thirdiv"><img src="{IMG_URL}ADD.jpg" width="120" height="450" /></div>
