@@ -54,7 +54,7 @@
 
        <input name="terms" type="checkbox"  id="terms" />
 
-       <h4 style="text-decoration:underline; width:520px;"><a href="index.php?file=u-article&art_id=7">I agree to Terms and Conditions</a></h4>
+       <h4 style="text-decoration:underline; width:520px;"><a href="index.php?file=u-article&art_id=7" target="_balnk">I agree to Terms and Conditions</a></h4>
 
        </div>
 
