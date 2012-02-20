@@ -193,10 +193,13 @@
 
       <div style="width:660px; float:left; padding:5px 10px; background:#eceded; margin-bottom:20px;">
 
-        <span style="font-size:14px; font-weight:bold; align="center"; color:#0075b7;">You Have Disabled Expressions </span>
+        <span style="font-size:12px; font-weight:bold; color:#0075b7;">You Have Disabled Expressions </span>
         
       </div>   <div > <span> <font color="red"><b>&nbsp;&nbsp;&nbsp;{msg}</b></font></span></div>
-      
+      <h5> To Enable Expression Functionality follow these steps:<h5>
+	     <h7> Click "Dashboard" under Settings<h7>
+	      <h7>Check the option Yes for the expressions<h7>
+		  
   
   </div>
   </div>
