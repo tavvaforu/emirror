@@ -302,7 +302,7 @@ Intensity(1=Low,5=Extreme)</label>
 
        <li><a href="#" class="active" >Message</a></li>
 
-       <li><a href="#"><input type="button" class="v_icon" /></label></a></li>
+      
 
      </ul>
 
