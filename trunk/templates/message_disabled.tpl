@@ -195,11 +195,11 @@
 
         <span style="font-size:12px; font-weight:bold; color:#0075b7;">You Have Disabled Expressions </span>
         
-      </div>   <div > <span> <font color="red"><b>&nbsp;&nbsp;&nbsp;{msg}</b></font></span></div>
-         <p><b>Enable Expression Functionality follow these steps:</b></p><br/>
-	      <p> Click <b>"Dashboard"</b> under <b>Settings</b><p>
+      </div>   <div > <span> <font color="red"><b>&nbsp;&nbsp;&nbsp;{msg}</b></font></span></div><br/>
+         <p><b>To Enable Expression Functionality follow these steps:</b></p><br/>
+	      <p> Click <b>Dashboard</b> under <b>Settings</b><p><br/>
 	      <p>Check the option<b> Yes</b> for the expressions<p><br/><br/>
-		  <p>If you would like to change the option for Inbox and Analysis you can select the appropriate radio buttons</p>
+		  <p>You can alter the options for <b>Inbox</b> and <b>Analysis</b> in the same screen</p>
 		  
   
   </div>
