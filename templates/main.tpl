@@ -1,16 +1,16 @@
  <div id="login_screen">
    <div class="login_box">
     <div class="lpanel"><h2>
-      <img src="{IMG_URL}login_text.png" width="419" height="99" alt="Emotions Mirror" /></h2>
-    <div class="bullettext">
-       <ul>
-         <li><img src="{IMG_URL}testi_icon.gif" width="26" height="26" alt="Post your comments" /><h5>Post your comments / concerns to express your emotions</h5></li>
-         <li><img src="{IMG_URL}express_icon.png" width="24" height="25" alt="Express yourself effectively" /><h5>Express yourself effectively, even anonymously</h5></li>
-         <li><img src="{IMG_URL}asses_icon.png" width="22" height="22" alt="Assess your employee satisfaction" /><h5>Assess your employee satisfaction</h5></li>
-         <li><img src="{IMG_URL}join_icon.png" width="25" height="19" alt="Find your character score" /><h5><a href="#">Join</a> to find your character score</h5></li>
-         <li><img src="{IMG_URL}discover_icon.png" width="22" height="28"  alt="Discover your personality and many"/><h5><a href="#">Join</a> to discover your personality and many             more</h5></li>
-       </ul>
-     </div>
+      <img src="{IMG_URL}home_page_txt.png" width="439" height="31" alt="Emotions Mirror" /></h2>
+      <div class="clear"></div>
+       <div style="width:450px; height:286px; margin:20px;">
+       <object width="450" height="286">
+	                <param name="movie" value="http://www.youtube.com/v/LNE0R3rEe5Q&hl=en&fs=1&amp;rel=0" />
+	                <param name="allowFullScreen" value="true" />
+	                <param name="allowscriptaccess" value="always" />
+	                <embed src="http://www.youtube.com/v/LNE0R3rEe5Q&hl=en&fs=1&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="450" height="286" />
+	            </object>
+       </div>
     </div>
     
     <div id="form-wrap">
