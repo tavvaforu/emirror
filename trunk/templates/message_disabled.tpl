@@ -196,9 +196,9 @@
         <span style="font-size:12px; font-weight:bold; color:#0075b7;">You Have Disabled Expressions </span>
         
       </div>   <div > <span> <font color="red"><b>&nbsp;&nbsp;&nbsp;{msg}</b></font></span></div>
-      <h5> To Enable Expression Functionality follow these steps:<h5>
-	     <h7> Click "Dashboard" under Settings<h7>
-	      <h7>Check the option Yes for the expressions<h7>
+      <p>To Enable Expression Functionality follow these steps:</p>
+	     <p> Click "Dashboard" under Settings<p>
+	      <p>Check the option Yes for the expressions<p>
 		  
   
   </div>
