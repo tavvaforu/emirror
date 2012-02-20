@@ -163,7 +163,7 @@ alert('Post was not published.');
 <!--<a href="#">Privacy Settings</a>-->
 <a href="index.php?file=u-chpass">Change Password</a>
 <a href="index.php?file=u-logout">Logout</a>
-<a href="#">Help Center</a>
+<a href="http://faq.emotionsmirror.com">Help Center</a>
 </div>
   </div>
         <!--<div id="filenrContainer">
