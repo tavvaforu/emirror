@@ -110,7 +110,7 @@
 		
        <div class="field"><label for="fname">Name </label> <input id="name" name="name" size="50" type="text" class="medium" value="{name}" readonly="readonly" /></div>
 	   <div class="field"><label for="fname">Email </label> <input id="email" name="email" size="50" type="text" class="medium" value="{email}" readonly="readonly" /></div>
-	   <div class="field"><label for="description">Colleague's Email </label> <textarea rows="7" cols="45" name="cemails" id="cemails"></textarea></div>
+	   <div class="field"><label for="description">Friend's Email </label> <textarea rows="7" cols="45" name="cemails" id="cemails"></textarea></div>
 	   <div class="field"><label for="fname">Subject </label> <input id="subject" name="subject" size="50" type="text" class="medium" value=""/></div>
        <div class="field"><label for="description">Message</label> <textarea rows="7" cols="45" name="message" id="message"></textarea></div>
 
