@@ -91,7 +91,7 @@
 
       <div style="padding:10px 0;">
 
-        <input type="submit" name="Signup" id="button" value="Signup" class="submit_btn" onclick="return validate_registerform(document.regform);"/>
+        <input type="submit" name="Submit" id="button" value="Signup" class="submit_btn" onclick="return validate_registerform(document.regform);"/>
 
         </div>
 
