@@ -470,7 +470,7 @@ text-decoration: underline;" href="javascript:addFileInput();">Attach another Fi
 
 	           <div class="messagesdivv">
 
-	    	  <h2>&nbsp;&nbsp;Journals</h2>
+	    	  <h2>&nbsp;&nbsp;Daily Triggers</h2>
 
               <div class="nuumbers"><img src="{IMG_URL}news_feed.gif" width="16" height="11" />Number of Triggers Recorded: {TOT_SENT}</div>
 
