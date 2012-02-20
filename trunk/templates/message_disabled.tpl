@@ -183,10 +183,24 @@
 
 
   <div class="innerdiv">
-  
+  <div class="content" id="page-1">
+
+    <div class="dailytriggertabs">
+
+   
+
+    <div style="width:700px; padding:10px 0;">
+
+      <div style="width:660px; float:left; padding:5px 10px; background:#eceded; margin-bottom:20px;">
+
+        <span style="font-size:12px; font-weight:bold; color:#0075b7;">Profile </span>
+        
+      </div>   <div > <span> <font color="red"><b>&nbsp;&nbsp;&nbsp;{msg}</b></font></span></div>
+      
   <div height="400" align="center"> You disabled Expressions</div>
   </div>
-  
+  </div>
+  </div>
 
   </div>
 
