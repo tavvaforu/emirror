@@ -7,8 +7,7 @@ $db=new myclass;
 $db->myconnect();
 if(isset($_POST))
 {
-
-		//echo '<pre>';print_r($_POST);exit;
+		echo '<pre>';print_r($_POST);exit;
 		 $_POST['name']=stripslashes($_POST['name']);
 	  	$fromName = ucwords($_POST['name']);
 		$fromAddress =$_POST['email'];
@@ -16,9 +15,9 @@ if(isset($_POST))
 		$Emails = trim($txtEmails,',');	
 
 		$serverAddress = $link = $_SESSION['domain_name']; 	
-        $message = nl2br($_POST['msg']) ;
+        $message = nl2br($_POST['message']) ;
 		$host = "http:".$_SERVER['HTTP_HOST'];
-		$message = str_replace('Click here',"<a href='".$serverAddress."/index.php?file=u-signup'>Click here<a/>",$message);
+		$message = str_replace('Click here',"<a href='http://".$_SERVER['HTTP_HOST']."/index.php?file=u-signup'>Click here<a/>",$message);
 		$subject = $_POST['subject'] ;		
 		$emailsList = explode(',',$Emails);	
 		$sql=mysql_query("select * from members where member_id='".$_SESSION["sess_memberid"]."'");
@@ -41,9 +40,11 @@ if(isset($_POST))
 							$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 							$headers .= 'To: emotionsmirror.com <registration@emotionsmirror.com>' . "\r\n";
 							$headers .= 'from: <'.$email.'>' . "\r\n";
-							if(mail($mailto,$subject,$message,$headers))
+							//echo $toEmail;exit;	
+							if(mail($toEmail,$subject,$message,$headers))
 							{
 							$msg="invitation sent succesfully";
+							//exit;
 							}
 							else{
 							$msg="Error-in sending the invitation";
