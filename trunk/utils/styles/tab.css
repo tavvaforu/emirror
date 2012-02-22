@@ -15,9 +15,9 @@ div.content_signup {
     border: #55acc5 solid 1px;
     padding: 10px;
 	background:#FFF;
-	width:950px;
+	width:930px;
 	overflow:hidden;
-	margin:10px 10px 10px 10px;
+	margin:10px;
    }
 
 div.content_signup.inactive {
