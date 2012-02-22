@@ -3,6 +3,7 @@ require_once("inc/config.inc.php");
 $obj=new emirror_config;
 $db=new myclass;
 $db->myconnect();
+
 $file =$_REQUEST['file'];
 if(isset($file) && $file != ""){
 	$var=explode("-",$file);
