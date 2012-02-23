@@ -1415,7 +1415,7 @@ $tp=str_replace("{DRAFT_BTN}",'<input id="saveForm" onclick="return valid_messag
 
 }else{
 
-$tp=str_replace("{DRAFT_BTN}",'<input id="saveForm" name="saveForm" class="inr_btn" type="button" value="Preview" onclick="return mypopupMessage(document.messageform,prv);"/>
+$tp=str_replace("{DRAFT_BTN}",'<input id="saveForm" name="saveForm" class="inr_btn" type="button" value="Preview" onclick="return mypopupMessage(document.messageform);"/>
 
    <input id="saveForm" onclick="return valid_messageform(document.messageform,\''.$str_words.'\');" name="saveForm" class="inr_btn" type="submit" value="Save"/>
 
