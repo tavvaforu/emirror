@@ -62,8 +62,10 @@ echo "<pre>";
 print_r($_POST);
 echo "</pre>";
 echo $memdata[0]['iid'];*/
-
 if($_POST['saveForm']=="Deactivate My Account"){
+echo '<pre>';
+print_r($_POST);exit;
+
 	$sql=mysql_query("update members set status='0' where member_id=".$_SESSION["sess_memberid"]);
 	 header("location:index.php?file=u-logout");
 	 exit;
