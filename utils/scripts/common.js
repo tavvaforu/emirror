@@ -293,7 +293,7 @@ function valid_triggerform(frm,strmsg)
 
 function validate_registerform(frm)
 {
-
+	//alert('tavva');false;
 	var result = false;
 	var result1 = false;
 	result = !isEmpty(frm.firstname,"Please Enter First Name") ; 
@@ -885,20 +885,15 @@ function mypopupMessagePrint(id,stype)
 	   // mywindow.moveTo(0, 0);
 		return false;
 }
-function mypopupMessage(formName,type)
+function mypopupMessage(formName)
 {
-//alert("hi");return false;
+	//alert(type);return false;
 	var res = valid_messageform(document.messageform);
 	if(res)
 	{
 	   var color_id=document.getElementById('color_id').value;
 		//alert(document.getElementById('color_id').value);return false;
-		if(type == 'prv')
-		{
-			mywindow = window.open("preview1.php?colorid="+color_id, "mywindow", "location=1,status=1,  width=700,height=400");
-		} else {
-			mywindow = window.open("printpreview.php?messageid="+type, "mywindow", "location=1,status=1,  width=700,height=400");
-		}
+		mywindow = window.open("preview1.php?colorid="+color_id, "mywindow", "location=1,status=1,  width=700,height=400");
 	   // mywindow.moveTo(0, 0);
 		return false;
 	}
