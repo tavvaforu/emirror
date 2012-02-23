@@ -4,15 +4,16 @@
       <img src="{IMG_URL}home_page_txt.png" width="439" height="31" alt="Emotions Mirror" /></h2>
       <div class="clear"></div>
        <div style="width:450px; height:286px; margin:20px;">
-       <object width="450" height="286">
-	                <param name="movie" value="http://www.youtube.com/v/LNE0R3rEe5Q&hl=en&fs=1&amp;rel=0" />
-	                <param name="allowFullScreen" value="true" />
-	                <param name="allowscriptaccess" value="always" />
-	                <embed src="http://www.youtube.com/v/LNE0R3rEe5Q&hl=en&fs=1&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="450" height="286" />
-	            </object>
+       <a class="fancybox-effects-d" href="http://www.youtube.com/v/8UeaYC_quzg" style="width:700px; height:500px; border:none;"> <img src="{IMG_URL}em_video.jpg" width="450" height="286" alt="Emotions Mirror" /></a>
+       </div>
+       <div class="clear"></div>
+      <div style="width:260px; height:80px; margin-left:20px;">
+        <div style="width:100px; height:50px; margin-top:20px; float:left; background:url(../../media/images/visitus.png) no-repeat; top:50px;""></div>
+        <div style="width:52px; height:52px; margin:8px 20px 8px 20px; float:right;"><a href="https://twitter.com/#!/emotionsmirror" target="_blank"><img src="{IMG_URL}twitter_30.png" width="52" height="49" alt="Emotions Mirror" /></a></div>
+        <div style="width:52px; height:52px; margin:8px 0px; float:right;"><a href="http://www.facebook.com/pages/Emotions-Mirror-LLC/377955278886288" target="_blank"><img src="{IMG_URL}facebook_30.png" width="52" height="52" alt="Emotions Mirror" /></a></div>
        </div>
     </div>
-<div><span style="color:#F00;font-weight:bold;padding-left:100px;">{MSG}</span></div>	    
+<!--<div><span style="color:#F00;font-weight:bold;padding-left:100px;">{MSG}</span></div>-->
     <div id="form-wrap">
 
   <div class="fheading"><img src="{IMG_URL}signuptxt.png" width="89" height="23" alt="emotions mirror" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -73,8 +74,8 @@
 <!--
 
  <div class="social_icon_holder">
-    <div class="iconholder"><img src="{IMG_URL}twitter_icon.png" width="124" height="41" alt="twitter" /></div>
-    <div class="iconholder"><img src="{IMG_URL}facebook_icon.png" width="156" height="41" alt="facebook" /></div>
+    <div class="iconholder"><a href="http://twitter.com/#!/emotionsmirror" target="_blank"><img src="{IMG_URL}twitter_icon.png" width="124" height="41" alt="twitter" /><a></div>
+    <div class="iconholder"><a href="http://www.facebook.com/pages/Emotions-Mirror-LLC/377955278886288" target="_blank"><img src="{IMG_URL}facebook_icon.png" width="156" height="41" alt="facebook" /></a></div>
     <div class="iconholder" style="border:none;"><img src="{IMG_URL}facebooklikes.png" width="213" height="36" alt="FB Likes" /></div>
  </div>
  
