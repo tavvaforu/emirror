@@ -133,7 +133,7 @@ $tp=str_replace("{dsImage}",$dsImage,$tp);
 
  </div> 
  <!--profiles Ends-->		
- <div class="thirdiv"><img src="<? echo IMG_ROOT;?>ADD.jpg" width="120" height="450" /></div>
+ <!--<div class="thirdiv"><img src="<? echo IMG_ROOT;?>ADD.jpg" width="120" height="450" /></div>-->
 
   	
 
