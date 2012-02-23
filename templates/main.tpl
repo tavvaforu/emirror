@@ -12,7 +12,7 @@
 	            </object>
        </div>
     </div>
-    
+<div><span style="color:#F00;font-weight:bold;padding-left:100px;">{MSG}</span></div>	    
     <div id="form-wrap">
 
   <div class="fheading"><img src="{IMG_URL}signuptxt.png" width="89" height="23" alt="emotions mirror" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -23,7 +23,7 @@
 
       <div class="formleft">
 
-	  <form action="index.php?file=u-signup" method="POST" name="regform" class="form">
+	  <form action="index.php?file=u-main" method="POST" name="regform" class="form">
 
         <h4>First Name<span style="color:#F00">*</span></h4>
 
