@@ -291,7 +291,7 @@
 
  <!--profiles Ends-->
 
- <div class="thirdiv"><img src="{IMG_URL}ADD.jpg" width="120" height="450" /></div>
+ <!--<div class="thirdiv"><img src="{IMG_URL}ADD.jpg" width="120" height="450" /></div>-->
 
   	
 
