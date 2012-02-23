@@ -1,4 +1,19 @@
-
+<script>
+function Confirmbtn()
+{
+var r=confirm("Are you sure to deactivate account?")
+if (r==true)
+  {
+	$('#profileform').submit();
+	//alert("You pressed OK!")
+  }
+else
+  {
+	return false;
+  //alert("You pressed Cancel!")
+  }
+}
+</script>
 
  <div id="inner_screen">
 
@@ -191,7 +206,7 @@
         
       </div>   <div > <span> <font color="red"><b>&nbsp;&nbsp;&nbsp;{msg}</b></font></span></div>
 
-      <form name="profileform" method="POST" class="form label-inline" action="index.php?file=s-profile"  enctype="multipart/form-data">
+      <form name="profileform" id="profileform" method="POST" class="form label-inline" action="index.php?file=s-profile"  enctype="multipart/form-data">
       <input type="hidden" name="teno" id="teno" value="{teno}" />
       <div class="field"><label for="lname">Profile Photo </label> 								
 
@@ -233,7 +248,7 @@
 
      <!--<input id="saveForm" name="saveForm" class="inr_btn" type="submit" value="Cancel"/>-->
 
-     <input id="saveForm" name="saveForm" class="inr_btn" type="submit" value="Deactivate My Account"/>
+     <input id="saveForm" name="saveForm" class="inr_btn" type="submit" onclick="return Confirmbtn();" value="Deactivate My Account"/>
      </div>
 </form>
     <div class="clear"></div>
@@ -292,6 +307,8 @@
     //]]
 </script>
 <script type="text/javascript">
+
+
 
 $(document).ready(function(){
  
