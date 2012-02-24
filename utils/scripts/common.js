@@ -271,7 +271,7 @@ if(result){
 }
 function valid_triggerform(frm,strmsg)
 {
-    var tid=document.getElementById("faceid").checked.value;
+    var tid=document.getElementById("stype").checked.value;
 	//alert(tid);return false;
 	var result = false;
 	var result1 = false;
