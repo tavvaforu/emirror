@@ -206,15 +206,15 @@
 	   <a id="inline" href="#data"><b>Imoprt Contacts</b></a>
 	   <div style="display:none"><div id="data">
 	   	<form id="login_form" method="post" action="" onsubmit="javascript:return getValidateFun();">
-	    	<p id="login_error" style="display:none;color:red;">Please, enter data</p>
+	    	<p id="login_error" style="display:none;color:red;">Please provide credentials.</p>
 			<br/>
 		<p>
-			<label for="login_name">Provide: </label>
+			<label for="login_name">Provider: </label>
 			<select name="provider" id="provider">
 			<option value="gmail">Gmail</option>
 			<option value="hotmail">Hotmail</option>
 			<option value="aol">Aol</option>
-			<option value="yahoo">Yahoo</option>
+			<!--<option value="yahoo">Yahoo</option>-->
 			</select>
 		</p>
 		<br/>
@@ -284,7 +284,7 @@ function getValidateFun()
 {
 
 	if ($("#provider").val() == '') {
-	    $("#login_error").show('Please select provider');
+	    $("#login_error").show('');
 	    return false;
 	}
 	
