@@ -92,4 +92,3 @@ echo $tp;
 
 require_once("includes/footer_signup.php");
 ?>
-<div id="basicddd-modal-content"></div>
