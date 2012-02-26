@@ -203,7 +203,7 @@
       <span style="font-size:12px; font-weight:bold; color:#0075b7;">Refer Friend(s) </span>
       </div>
 
-	   <a id="inline" href="#data"><b>Imoprt Contacts</b></a>
+	   <a id="inline" href="#data"><b>Import Contacts</b></a>
 	   <div style="display:none"><div id="data">
 	   	<form id="login_form" method="post" action="" onsubmit="javascript:return getValidateFun();">
 	    	<p id="login_error" style="display:none;color:red;">Please provide credentials.</p>
