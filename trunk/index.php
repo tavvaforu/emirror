@@ -84,6 +84,7 @@ $tp=str_replace("{dsImage}",$dsImage,$tp);
 $tp=str_replace("{IMG_URL}",IMG_ROOT,$tp);
 $tp=str_replace("{NO_SESSION}",NO_SESSION,$tp);
 $tp=str_replace("{SCRIPT_URL}",SCRIPTS_ROOT,$tp);
+$tp=str_replace("{STYLE_URL}",STYLES_ROOT,$tp);
 $tp=str_replace("{NO_SESSION_END}",NO_SESSION_END,$tp);
 $tp=str_replace("{LOGIN_PAGE}",USER_MODULE."/login.php",$tp);
 $tp=str_replace("{REGISTER_PAGE}",USER_MODULE."/register.php",$tp);
@@ -91,3 +92,4 @@ echo $tp;
 
 require_once("includes/footer_signup.php");
 ?>
+<div id="basicddd-modal-content"></div>

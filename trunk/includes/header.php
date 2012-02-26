@@ -22,6 +22,7 @@ $now = time(); // checking the time now when home page starts
 <link href="<?php echo STYLES_ROOT; ?>favorites.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo STYLES_ROOT; ?>tab.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo STYLES_ROOT; ?>form.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo STYLES_ROOT; ?>jquery.fancybox.css" rel="stylesheet" type="text/css" />
 
 <!--[if lte IE 7]>
      <link href="css/style.ie.css" rel="stylesheet" type="text/css" /><![endif]-->
@@ -36,6 +37,7 @@ $now = time(); // checking the time now when home page starts
 <script type="text/javascript" src="<?php echo SCRIPTS_ROOT; ?>jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="<?php echo SCRIPTS_ROOT; ?>jquery-ui-1.8.16.custom.min.js"></script>
 <script type="text/javascript" src="<?php echo SCRIPTS_ROOT; ?>common.js" ></script>
+<script type="text/javascript" src="<?php echo SCRIPTS_ROOT; ?>jquery.fancybox.js" ></script>
 
 <!--<script type="text/javascript">
 			$(function() {
@@ -82,6 +84,7 @@ $now = time(); // checking the time now when home page starts
   }
 
 </script> -->
+
 
 </head>
 
