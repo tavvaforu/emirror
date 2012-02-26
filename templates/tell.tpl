@@ -1,5 +1,4 @@
 
-<link href="{STYLE_URL}template.css" rel="stylesheet" type="text/css" />
 
 <!--[if lte IE 7]>
 
@@ -16,7 +15,6 @@
 <link href="{SCRIPT_URL}jalerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
 
 
-
 <!-- Arquivos utilizados pelo jQuery lightBox plugin -->
 
 
@@ -26,7 +24,108 @@
 		<script type="text/javascript" src="{SCRIPT_URL}jquery-1.6.2.min.js"></script>
 
 		<script type="text/javascript" src="{SCRIPT_URL}jquery-ui-1.8.16.custom.min.js"></script>
-  <div id="inner_screen">
+<!--  ==  popup 1  ==  -->
+<script type="text/javascript" src="{SCRIPT_URL}jquery.fancybox.js" ></script>
+<link href="{STYLE_URL}jquery.fancybox.css" rel="stylesheet" type="text/css" />
+<link href="{STYLE_URL}template.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				Simple image gallery. Uses default settings
+			*/
+
+			$('.fancybox').fancybox();
+
+			/*
+				Different effects
+			*/
+
+			// Change title type, overlay opening speed and opacity
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedIn : 500,
+						opacity : 0.95
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background-color' : '#eee'	
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".test").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+
+			/*
+				Open manually
+			*/
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+  $(".ku_fancybox").fancybox({ 'hideOnContentClick': false,'zoomSpeedIn': 300, 'zoomSpeedOut': 300, 'overlayShow': true });
+	$("a#inline").fancybox({
+		'hideOnContentClick': true
+	});
+
+		});
+		
+	</script>
+
+		<div id="inner_screen">
    <div class="login_box">
     
     
@@ -39,6 +138,7 @@
 <div>
   <h3>FAVORITES</h3>
 </div>
+<div id="basic-modal-content"></div>
  <div class="favor">
 
 	      <ul>
@@ -101,7 +201,40 @@
     <div style="width:700px; padding:10px 0;">
       <div style="width:690px; float:left; padding:5px 10px; background:#eceded; margin-bottom:20px;">
       <span style="font-size:12px; font-weight:bold; color:#0075b7;">Refer Friend(s) </span>
-      </div>   
+      </div>
+
+	   <a id="inline" href="#data"><b>Imoprt Contacts</b></a>
+	   <div style="display:none"><div id="data">
+	   	<form id="login_form" method="post" action="" onsubmit="javascript:return getValidateFun();">
+	    	<p id="login_error" style="display:none;color:red;">Please, enter data</p>
+			<br/>
+		<p>
+			<label for="login_name">Provide: </label>
+			<select name="provider" id="provider">
+			<option value="gmail">Gmail</option>
+			<option value="hotmail">Hotmail</option>
+			<option value="aol">Aol</option>
+			<option value="yahoo">Yahoo</option>
+			</select>
+		</p>
+		<br/>
+		<p>
+			<label for="login_name">Login: </label>
+			<input type="text" id="login_name" name="login_name" size="30" />
+		</p>
+		<br/>
+		
+		<p>
+			<label for="login_pass">Password: </label>
+			<input type="password" id="login_pass" name="login_pass" size="30" />
+		</p>
+		<p>
+			<input type="submit" value="Login" />
+		</p>
+	</form>
+	   
+	   </div></div>
+</div>
       <form name="profileform" method="POST" class="form label-inline" action="index.php?file=fr-sent"  enctype="multipart/form-data">
 <div > <span> <font color="red"><b>&nbsp;&nbsp;&nbsp;{MESSAGE}</b></font></span></div>
 		<input type="hidden" name="alid" value="{ALBUM_ID}">
@@ -146,6 +279,43 @@ cssdropdown.startchrome("chromemenu")
 </script>
 <script type="text/javascript">
 //<![CDATA[
+
+function getValidateFun()
+{
+
+	if ($("#provider").val() == '') {
+	    $("#login_error").show('Please select provider');
+	    return false;
+	}
+	
+	if ($("#login_name").val().length < 1 || $("#login_pass").val().length < 1) {
+	    $("#login_error").show();
+	    return false;
+	}
+
+	email= $("#login_name").val();
+	password= $("#login_pass").val();
+	provider= $("#provider").val();
+	$.ajax({
+		type		: "POST",
+		dataType: "text",
+		cache	: false,
+		url		: "test.php?email="+email+"&password="+password+"&provider="+provider,
+		//data		: {id:'rr',name:'sss'},
+		success: function(data) {
+		//alert(data);
+		$.fancybox(data);
+		//$('#data').html(data);
+		}
+	});
+
+	return false;
+
+
+	alert('test');return false;
+}
+
+
 function validInput(string)
 {
 re=/[<>]/;
@@ -219,10 +389,33 @@ return false;
 }*/
 
 }
-	
+function showModel(url,Params) { 
+		//alert('sfsf');return false;
+		var requestUrl = url;
+		$.ajax({
+		type: "POST",
+	   	dataType: "json",
+		url: url,
+		data: Params,
+		success: function(msg){ 
+			 $('#testqq').fancybox('<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td align="right"><a href="#" class="simplemodal-close">g</a></td></tr></table>'+msg.output).modal({onOpen: function (dialog) {
+					dialog.overlay.fadeIn('slow', function () {
+						dialog.container.slideDown('slow', function () {
+							dialog.data.fadeIn(1000);
+						});
+					});
+			   }});  
+		}
+		
+		});
+			
+		return false;
+}	
 
 //]]>
 </script>
+
+
 
 
 
