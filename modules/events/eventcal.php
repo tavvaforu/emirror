@@ -49,14 +49,14 @@ $tp=str_replace("{dsImage}",$dsImage,$tp);
 <!--[if lte IE 7]>
  <!--[if lte IE 7]>
 <link href="<? echo STYLE_ROOT?>style.ie.css" rel="stylesheet" type="text/css" /><![endif]-->	
-<script src="<? echo SCRIPT_ROOT;?>jalerts/jquery.ui.draggable.js" type="text/javascript"></script>
-<script src="<? echo SCRIPT_ROOT;?>jalerts/jquery.alerts.js" type="text/javascript"></script>
-<script type="text/javascript" src="<? echo SCRIPT_ROOT;?>common.js" ></script>
-<link href="<? echo SCRIPT_ROOT;?>jalerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="<? echo SCRIPTS_ROOT;?>jalerts/jquery.ui.draggable.js" type="text/javascript"></script>
+<script src="<? echo SCRIPTS_ROOT;?>jalerts/jquery.alerts.js" type="text/javascript"></script>
+<script type="text/javascript" src="<? echo SCRIPTS_ROOT;?>common.js" ></script>
+<link href="<? echo SCRIPTS_ROOT;?>jalerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
 <!-- Arquivos utilizados pelo jQuery lightBox plugin -->
     <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />	
-		<script type="text/javascript" src="<? echo SCRIPT_ROOT;?>jquery-1.6.2.min.js"></script>
-		<script type="text/javascript" src="<? echo SCRIPT_ROOT;?>jquery-ui-1.8.16.custom.min.js"></script>
+		<script type="text/javascript" src="<? echo SCRIPTS_ROOT;?>jquery-1.6.2.min.js"></script>
+		<script type="text/javascript" src="<? echo SCRIPTS_ROOT;?>jquery-ui-1.8.16.custom.min.js"></script>
 <body onLoad="init();">
   <div id="inner_screen">
    <div class="login_box">    
@@ -149,8 +149,8 @@ $tp=str_replace("{dsImage}",$dsImage,$tp);
 
 </body>
 </html>
- <script type="text/javascript" src="{SCRIPT_URL}dropdown.js"></script>
-
+ 
+<script type="text/javascript" src="<?php echo SCRIPTS_ROOT;?>dropdown.js"></script>
 <script type="text/javascript">
 cssdropdown.startchrome("chromemenu")
 </script>
