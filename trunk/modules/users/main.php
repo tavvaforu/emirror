@@ -89,18 +89,18 @@ $headers .= 'To: <'.$email.'>' . "\r\n";
 $headers .= 'From: emotionsmirror.com <registration@emotionsmirror.com>' . "\r\n";
 				if(mail($mailto,$mailsubject,$mailbody,$headers))
 				{
-					$msg="Registration sucessful.<br/>A confirmation email was sent to email adress .You must check your email and click the link to confirm your email address.";
+					$msg="Registration Successful.<br/>A confirmation email was sent to email address .You must check your email and click the link to confirm your email address.";
 					
 				}
 				else
 				{
-					$msg="Registration unsucessful";
+					$msg="Registration Unsuccessful";
 				}
 
 			}
 				else
 				{
-                     $msg="Registration unsucessful(database error)";
+                     $msg="Registration Unsuccessful(database error)";
 				}
 			}	 
 			else {
@@ -111,7 +111,7 @@ $headers .= 'From: emotionsmirror.com <registration@emotionsmirror.com>' . "\r\n
 
 		}else
 				{
-					$msg="Registration unsucessful(captcha error)";
+					$msg="Registration Unsuccessful(captcha error)";
 				}
 	
 		}
