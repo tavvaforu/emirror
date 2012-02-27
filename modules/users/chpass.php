@@ -18,13 +18,18 @@ if($_POST)
 
 
 
-
+if($_GET['msg'] !='')
+{
+	$msg = $_GET['msg'];
+}
 
  
  $tp = str_replace("{SESSBASEDCTRLSTART}",$sessbasedctrlstart,$tp);
 $tp = str_replace("{SESSBASEDCTRLEND}",$sessbasedctrlend,$tp);
 $tp = str_replace("{oldpass}",$oldpass,$tp);
 $tp = str_replace("{MSG}",$sucmsg,$tp);
+
+$tp = str_replace("{msg}",$msg,$tp);
 
 $tp=str_replace("{IMG_URL}",IMG_ROOT,$tp);
 $tp=str_replace("{MAIN_ROOT}",MAIN_ROOT,$tp);
@@ -34,7 +39,9 @@ $tp=str_replace("{NO_SESSION}",NO_SESSION,$tp);
 $tp=str_replace("{NO_SESSION_END}",NO_SESSION_END,$tp);
 $tp=str_replace("{LOGIN_PAGE}",USER_MODULE."/login.php",$tp);
 $tp=str_replace("{REGISTER_PAGE}",USER_MODULE."/register.php",$tp);
-
-
+if($_POST)
+{
+	header("location:index.php?file=u-chpass&msg=".$sucmsg);
+}
 
 ?>
