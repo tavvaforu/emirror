@@ -46,7 +46,7 @@
 
       <div class="fheading"><img src="{IMG_URL}changepassword.png" width="178" height="28" alt="emotions mirror" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-	  <span style="color:#F00;font-weight:bold">{MSG}</span></div>
+	  <span style="color:#F00;font-weight:bold">{msg}</span></div>
 
 	  <div class="clear"></div>
 
