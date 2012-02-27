@@ -1,30 +1,28 @@
 <link href="{STYLE_URL}template.css" rel="stylesheet" type="text/css" />
-
 <!--[if lte IE 7]>
-
  <!--[if lte IE 7]>
-
 <link href="{STYLE_URL}style.ie.css" rel="stylesheet" type="text/css" /><![endif]-->	
-
 <script src="{SCRIPT_URL}jalerts/jquery.ui.draggable.js" type="text/javascript"></script>
-
 <script src="{SCRIPT_URL}jalerts/jquery.alerts.js" type="text/javascript"></script>
-
 <script type="text/javascript" src="{SCRIPT_URL}common.js" ></script>
-
 <link href="{SCRIPT_URL}jalerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
 
+<!----FaNCTYYBOX---->
+<script type="text/javascript" src="{SCRIPT_URL}jquery.fancybox.js" ></script>
+<link href="{STYLE_URL}jquery.fancybox.css" rel="stylesheet" type="text/css" />
+<link href="{STYLE_URL}template.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" >
 
+$(document).ready(function(){
+ $("#autostart").fancybox({
+  'width': 1000,  
+  'height': 1000,
+  'type': 'iframe'
+ });
+}); 
 
-<!-- Arquivos utilizados pelo jQuery lightBox plugin -->
-
-
-
-    <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />	
-
-		<script type="text/javascript" src="{SCRIPT_URL}jquery-1.6.2.min.js"></script>
-
-		<script type="text/javascript" src="{SCRIPT_URL}jquery-ui-1.8.16.custom.min.js"></script>
+</script>
+<!--FancyBox--> 	
 
 		<script type="text/javascript">
 
@@ -224,7 +222,7 @@
 			<li><a href="javascript:void(0);" name="surprise" id="surprise" onclick="document.getElementById('color_id').value=6;change_bg('surprise');" style="width:70px;">Surprise</a></li>
 			<li><a href="javascript:void(0);" name="sadness" id="sadness" style="; background:url(images/cut_image/sadness.png);"  onclick="document.getElementById('color_id').value=7;change_bg('sadness');" >Sadness</a></li>
 		</ul>
-	   <div class="imgtext"><a href="#">Help me Choose Emotion type?</a></div>
+	   <div class="imgtext"><a href="includes/emotions.php" id="autostart">Help me Choose Emotion type?</a></div>
       </div>
       
      <div id="slider-range-min" style="width:230px; float:right; margin:10px 0;"></div>
