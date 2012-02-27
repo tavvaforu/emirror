@@ -1,4 +1,4 @@
-<link href="{STYLE_URL}template.css" rel="stylesheet" type="text/css" />
+<link href="{STYLES_URL}template.css" rel="stylesheet" type="text/css" />
 
 <!--[if lte IE 7]>
 
