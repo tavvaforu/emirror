@@ -16,6 +16,7 @@
 
 
 
+
 <!-- Arquivos utilizados pelo jQuery lightBox plugin -->
 
 
@@ -25,47 +26,23 @@
 		<script type="text/javascript" src="{SCRIPT_URL}jquery-1.6.2.min.js"></script>
 
 		<script type="text/javascript" src="{SCRIPT_URL}jquery-ui-1.8.16.custom.min.js"></script>
+<!--  ==  popup 1  ==  -->
+<script type="text/javascript" src="{SCRIPT_URL}jquery.fancybox.js" ></script>
+<link href="{STYLE_URL}jquery.fancybox.css" rel="stylesheet" type="text/css" />
+<link href="{STYLE_URL}template.css" rel="stylesheet" type="text/css" />
 
-		<script type="text/javascript">
+<script type="text/javascript" >
 
-			$(function() {			
+ 
+$(document).ready(function(){
+ $("#autostart").fancybox({
+  'width': 1000,  
+  'height': 1000,
+  'type': 'iframe'
+ });
+}); 
 
-			if(document.getElementById("intensity").value!="")
-
-			{
-
-			   a=document.getElementById("intensity").value;
-
-			}else{
-
-			   a=3;
-
-			 }
-
-		$( "#slider-range-min" ).slider({
-
-			range: "min",
-
-			value: a,
-
-			min: 1,
-
-			max: 5,
-
-			slide: function( event, ui ) {
-
-				$( "#intensity" ).val(ui.value );
-
-			}
-
-		});
-
-		$( "#intensity" ).val( $( "#slider-range-min" ).slider( "value" ) );
-
-	});
-
-		</script>
-
+</script>
 		<style type="text/css">
 
 			/*demo page css*/
@@ -279,9 +256,11 @@ Intensity(1=Low,5=Extreme)</label>
 
 		</ul>
 
-	   <div class="imgtext"><a href="#">Help me Choose Emotion type?</a></div>
+	  
 
-      </div>
+<div class="imgtext"><a href="includes/emotions.php" id="autostart">Help me Choose Emotion type?</a></div>
+ 
+     </div>
 
       <div id="slider-range-min" style="width:230px; float:right; margin:10px 0;"></div>
 

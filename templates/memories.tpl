@@ -25,6 +25,22 @@
 		<script type="text/javascript" src="{SCRIPT_URL}jquery-1.6.2.min.js"></script>
 
 		<script type="text/javascript" src="{SCRIPT_URL}jquery-ui-1.8.16.custom.min.js"></script>
+		
+		<script type="text/javascript" src="{SCRIPT_URL}jquery.fancybox.js" ></script>
+		<link href="{STYLE_URL}jquery.fancybox.css" rel="stylesheet" type="text/css" />
+		<link href="{STYLE_URL}template.css" rel="stylesheet" type="text/css" />
+		
+<script type="text/javascript" >
+
+$(document).ready(function(){
+ $("#autostart").fancybox({
+  'width': 1000,  
+  'height': 1000,
+  'type': 'iframe'
+ });
+}); 
+
+</script>
 
 		<script type="text/javascript">
 
@@ -225,7 +241,7 @@ Intensity(1=Low, 5=Extreme)</label>
 			<li><a href="javascript:void(0);" name="surprise" id="surprise" onclick="document.getElementById('color_id').value=6;change_bg('surprise');" style="width:70px;">Surprise</a></li>
 			<li><a href="javascript:void(0);" name="sadness" id="sadness" style="; background:url(images/cut_image/sadness.png);"  onclick="document.getElementById('color_id').value=7;change_bg('sadness');" >Sadness</a></li>
 		</ul>
-	   <div class="imgtext"><a href="#">Help me Choose Emotion type?</a></div>
+	   <div class="imgtext"><a href="includes/emotions.php" id="autostart">Help me Choose Emotion type?</a></div>
       </div>
      <div id="slider-range-min" style="width:230px; float:right; margin:10px 0;"></div>
       <div style="width: 230px;float:right;padding-right: 1px;"> 
