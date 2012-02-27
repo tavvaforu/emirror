@@ -168,7 +168,7 @@
 <?php } else { ?>
 <table width="97%" border="0" cellspacing="0" cellpadding="0" align="center">
   <tr>
-    <td  height="100" style="color:#F00" valign="middle"><?php echo $error;?></td>
+    <td  height="100" style="color:#F00" valign="middle"><?php echo $ers;?></td>
   </tr>
 </table>
 <?php } ?>
