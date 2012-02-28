@@ -4,16 +4,11 @@
 
  <!--[if lte IE 7]>
 
-<link href="{STYLE_URL}style.ie.css" rel="stylesheet" type="text/css" /><![endif]-->	
-
+<link href="{STYLE_URL}style.ie.css" rel="stylesheet" type="text/css" /><![endif]-->
 <script src="{SCRIPT_URL}jalerts/jquery.ui.draggable.js" type="text/javascript"></script>
-
 <script src="{SCRIPT_URL}jalerts/jquery.alerts.js" type="text/javascript"></script>
-
 <script type="text/javascript" src="{SCRIPT_URL}common.js" ></script>
-
 <link href="{SCRIPT_URL}jalerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="screen" />
-
 
 
 
@@ -26,6 +21,8 @@
 		<script type="text/javascript" src="{SCRIPT_URL}jquery-1.6.2.min.js"></script>
 
 		<script type="text/javascript" src="{SCRIPT_URL}jquery-ui-1.8.16.custom.min.js"></script>
+		
+		
 <!--  ==  popup 1  ==  -->
 <script type="text/javascript" src="{SCRIPT_URL}jquery.fancybox.js" ></script>
 <link href="{STYLE_URL}jquery.fancybox.css" rel="stylesheet" type="text/css" />
@@ -41,7 +38,46 @@ $(document).ready(function(){
   'type': 'iframe'
  });
 }); 
+</script>
+<!--FancyBox--> 	
 
+		<script type="text/javascript">
+
+			$(function() {			
+
+			if(document.getElementById("intensity").value!="")
+
+			{
+
+			   a=document.getElementById("intensity").value;
+
+			}else{
+
+			   a=3;
+
+			 }
+
+		$( "#slider-range-min" ).slider({
+
+			range: "min",
+
+			value: a,
+
+			min: 1,
+
+			max: 5,
+
+			slide: function( event, ui ) {
+
+				$( "#intensity" ).val(ui.value );
+
+			}
+
+		});
+
+		$( "#intensity" ).val( $( "#slider-range-min" ).slider( "value" ) );
+
+	});
 </script>
 		<style type="text/css">
 
