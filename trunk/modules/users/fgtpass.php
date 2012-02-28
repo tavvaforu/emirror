@@ -21,7 +21,7 @@ $pwdlength = 10;
 mysql_query("update members set password='".md5($newpass)."' where email='$email'");	
 $mailto=$email;
 $mailsubject="Password reset from Emotions Mirror";
-$mailbody="Dear ".ucfirst($arr['first_name']).",<br>
+$mailbody="Dear ".($arr['username']).",<br>
 Please find your new password.
 <br>
 ".$newpass."
