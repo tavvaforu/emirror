@@ -24,6 +24,7 @@ $tp = $tpl_object->getContent();
 
 if(isset($_GET['id']) && $_GET['id']!="")
 {
+	$id = $_GET['id'];
 //echo "select a.*,b.message_intensity as color_id from messagetrigger a,message_intensity b where a.message_color_id=b.id and a.id='$id'";
   $my_draft=mysql_query("select a.*,b.message_intensity as color_id,b.desc as motion from messagetrigger a,message_intensity b where a.message_color_id=b.id and a.id='$id'");
   $my_arrdraft=mysql_fetch_array($my_draft);
