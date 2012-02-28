@@ -61,23 +61,15 @@ $mailto=$email;
 $mailbody = "Hi  ".ucfirst($first_name).",
 Thank you for your Interest in Emotions Mirror<br />
           
-          
-    <br>
-To activate your account ,perform the following steps:<br>
-1. click the below link to activate your account
-<br>
-2. A web browser opens and displays your account is activated. Click Login.<br>
-<br>
-3. Type your user ID and Password and then click Login.
-<br>
+     
+    
+Click the below link to activate your account
+
 <a href='http://".$_SERVER['HTTP_HOST']."/index.php?file=u-confirm_user&email=".$email."&pwd=".$password." '> Activate now </a>
 <br>
-<br>    
-In case you have any queries / clarifications, please call us or write to our Mailid : contactus@emotionsmirror.com
-<br>
+
 Please do not reply to this email.
-<br>
-Thank you for registering.<br>
+
 <br>
 
 Emotions Mirror Team";
@@ -89,18 +81,18 @@ $headers .= 'To: <'.$email.'>' . "\r\n";
 $headers .= 'From: emotionsmirror.com <registration@emotionsmirror.com>' . "\r\n";
 				if(mail($mailto,$mailsubject,$mailbody,$headers))
 				{
-					$msg="Registration Successful.<br/>A confirmation email was sent to email address .You must check your email and click the link to confirm your email address.";
+					$msg="Registration successful.<br/>A confirmation email is sent to your email address.Please check your email and click the link to confirm your email address.";
 					
 				}
 				else
 				{
-					$msg="Registration Unsuccessful";
+					$msg="Registration unsucessful";
 				}
 
 			}
 				else
 				{
-                     $msg="Registration Unsuccessful(database error)";
+                     $msg="Registration unsucessful(database error)";
 				}
 			}	 
 			else {
@@ -111,7 +103,7 @@ $headers .= 'From: emotionsmirror.com <registration@emotionsmirror.com>' . "\r\n
 
 		}else
 				{
-					$msg="Registration Unsuccessful(captcha error)";
+					$msg="Registration unsucessful(captcha error)";
 				}
 	
 		}
