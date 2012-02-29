@@ -937,7 +937,7 @@ function checkdera(inpstr,str)
 	{
 		strar=str.split(",");
 		for(var i=0;i<strar.length;i++){
-			if(inpstr.search(strar[i])!=-1)
+			if(inpstr.search(' '+strar[i]+' ')!=-1)
 			    {
 					  jAlert("You are using abusing words");return false;
 				}
