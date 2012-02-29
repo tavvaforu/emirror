@@ -397,7 +397,7 @@ if(mysql_num_rows($my_res)>0)
 	while($my_arr=mysql_fetch_array($my_res))
 	{
 		$id=$my_arr['id'];
-		$message=substr($my_arr['message'],0,8);
+		$message=substr($my_arr['title'],0,15);
 		$id=$my_arr['id'];
 		$title=$my_arr['title'];
 		//$condate=strtotime($my_arr['create_time']);
@@ -536,7 +536,7 @@ if($my_arrdraft['id']!=""){
  $tp=str_replace("{tab_name}",'<span>Edit</span>',$tp);
 
 }else{
- $tp=str_replace("{tab_name}",'<span>New</span>',$tp);
+ $tp=str_replace("{tab_name}",'<span>Compose</span>',$tp);
 }
 
 /*$tp=str_replace("{RECEIVED}","<a href='memories.php?stype=2&order=$order#page=page-2' ".$classR .">Received</a>",$tp);
