@@ -1,0 +1,34 @@
+sanjay.ja?garlamudi:  so it is a product that can be installed on different environments
+ me:  yes
+ Sent at 11:31 AM on Monday
+ sanjay.ja?garlamudi:  try to test thouroghly the one which is mostly used 
+ Sent at 11:32 AM on Monday
+ sanjay.ja?garlamudi:  and test only the ones that make use of web server settings and Database connections. And Load testing
+for the other
+ me:  ok .
+ Sent at 11:34 AM on Monday
+ me:  Made note of it.Thank you
+ sanjay.ja?garlamudi:  but defenetly it is not worth testing functional scenarios
+ Sent at 11:37 AM on Monday
+ me:  OH Ok. I think we wasted some time in testing functional scenarios in the past .
+ Sent at 11:39 AM on Monday
+ sanjay.ja?garlamudi:  Configuration settings vary on the server and also if they are using any third party dlls that might have a different dll for 64bit. which you can find with one scenario instead of testing all scenarios
+ me:  you mean in the web.comfig file
+ sanjay.ja?garlamudi:  on the other side during load test.. you can find session limitation of 2 GB for 32bit
+ Sent at 11:41 AM on Monday
+ me:  Regarding Configuration Settings are you referring to web.config file or in the IIS settings?
+ sanjay.ja?garlamudi:  I'm referring to SQL server configuration
+ me:  Ahh... Ok
+ sanjay.ja?garlamudi:  or let the developers let you know what are the special settings they do on 64bit just as a starting point and expand the test cases in similar lines
+say if they have to enable Named Pipes or TCP they have to do in two places on a 64bit
+
+
+4741 6530 0011 2070
+
+expiration:02-14
+
+610
+
+
+
+.PACK Installer
