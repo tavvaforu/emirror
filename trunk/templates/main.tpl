@@ -4,7 +4,7 @@
       <img src="{IMG_URL}home_page_txt.png" width="439" height="31" alt="Emotions Mirror" /></h2>
       <div class="clear"></div>
        <div style="width:450px; height:286px; margin:20px;">
-       <a class="fancybox-effects-d" href="http://www.youtube.com/v/8UeaYC_quzg" style="width:700px; height:500px; border:none;"> <img src="{IMG_URL}em_video.jpg" width="450" height="286" alt="Emotions Mirror" /></a>
+       <a class="fancybox-effects-d" href="http://www.youtube.com/v/O2lH0x_3vkE" style="width:700px; height:500px; border:none;"> <img src="{IMG_URL}em_video.jpg" width="450" height="286" alt="Emotions Mirror" /></a>
        </div>
        <div class="clear"></div>
       <div style="width:260px; height:80px; margin-left:20px;">
