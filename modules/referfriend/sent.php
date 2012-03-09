@@ -7,7 +7,7 @@ $db=new myclass;
 $db->myconnect();
 if(isset($_POST))
 {
-		echo '<pre>';print_r($_POST);exit;
+		//echo '<pre>';print_r($_POST);exit;
 		 $_POST['name']=stripslashes($_POST['name']);
 	  	$fromName = ucwords($_POST['name']);
 		$fromAddress =$_POST['email'];
