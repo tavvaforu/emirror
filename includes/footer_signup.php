@@ -9,7 +9,7 @@
 		$fooLink.= "| <a href='index.php?file=u-article&art_id=".$ar['article_id']."' >".ucwords($ar['title'])."</a>";
 		//echo "| <a href='index.php?file=u-article&art_id=".$ar['article_id']."' >".ucwords($ar['title'])."</a>";
 	}
-	  $fooLink=$fooLink."| <a href='http://faq.emotionsmirror.com/' target='_blank'>FAQ's</a> | <a href='#' target='_blank'>Forums</a>";
+	  $fooLink=$fooLink."| <a href='http://faq.emotionsmirror.com/' target='_blank'>FAQ's</a> | <a href='http://forums.emotionsmirror.com/' target='_blank'>Forums</a>|<a href='http://blog.emotionsmirror.com/' target='_blank'>Blog</a>";
 	  //$fooLink=$fooLink."| <a href='javascript:alert('')' target='_blank'>Forums</a>";
 	?>
            
