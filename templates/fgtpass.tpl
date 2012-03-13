@@ -38,83 +38,72 @@
 
   
 
-  <div id="login_screen">
+    <div id="login_screen">
 
-   <div class="login_box" style="padding-top:10px;">
+       <div class="login_box" style="padding-top:10px;">
 
-     <div id="signup-wrap">
+            <div id="signup-wrap">
 
-      <div class="fheading"><img src="{IMG_URL}resetpassword.png" width="159" height="24" alt="forgot password of emotions mirror" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="fheading"><img src="{IMG_URL}resetpassword.png" width="159" height="24" alt="forgot password of emotions mirror" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-	  <span style="color:#F00;font-weight:bold">{MSG}</span></div>
+	             <span style="color:#F00;font-weight:bold">{MSG}</span>
+				</div>
 
-	  <div class="clear"></div>
+				<div class="clear"></div>
 
-      <div class="formleft">
+				<div class="formleft">
 
-	  <form action="index.php?file=u-fgtpass" method="POST" name="regform" class="form">
+					<form action="index.php?file=u-fgtpass" method="POST" name="regform" class="form">
 
         
-        <h4>Email Address<span style="color:#F00">*</span></h4>
+						<h4>Email Address<span style="color:#F00">*</span></h4>
 
-        <input name="email" type="text" id="email "value="" />
+						<input name="email" type="text" id="email "value="" />
 
-      <div class="clear"></div>
+						<div class="clear"></div>
 
        
      
 
-      <div style="padding:10px 0;">
+							<div style="padding:10px 0;">
 
-        <input type="submit" name="Signup" id="button" value="Submit" class="submit_btn" />
+								<input type="submit" name="Signup" id="button" value="Submit" class="submit_btn" />
 
-        </div>
+						</div>
 
-		</form>
+					</form>	
 
-      </div>
+				</div>
 
       
 
-     <!-- <div class="formright">
+		    <!--	<div class="formright">
+					<span style="font-size:16px; color:#fff; font-weight:bold;">Login using Facebook</span>
+						<h4>Advanges</h4>
+						<ul style="color:#fff;  padding:5px 10px;">
+							<li style="color:#fff;  padding:5px 0;">Advange text 1</li>
+							<li style="color:#fff;  padding:5px 0;">Advange text 1</li>
+							<li style="color:#fff;  padding:5px 0;">Advange text 1</li>
+						</ul>
+                   <div style="width:215px; margin:10px 0; background:none;" ><img src="{IMG_URL}facebooklogin.png" width="215" height="36" /></div> 
 
-       
+                 <span style=" width:300px; font-size:12px; color:#fff;">Skip the forms by signing in with your Facebook
 
-        <span style="font-size:16px; color:#fff; font-weight:bold;">Login using Facebook</span>
+                 Account.
 
-       
+                 </span>
 
-        <h4>Advanges</h4>
-
-        <ul style="color:#fff;  padding:5px 10px;">
-
-         <li style="color:#fff;  padding:5px 0;">Advange text 1</li>
-
-         <li style="color:#fff;  padding:5px 0;">Advange text 1</li>
-
-         <li style="color:#fff;  padding:5px 0;">Advange text 1</li>
-
-        </ul>
-
-         <div style="width:215px; margin:10px 0; background:none;" ><img src="{IMG_URL}facebooklogin.png" width="215" height="36" /></div> 
-
-        <span style=" width:300px; font-size:12px; color:#fff;">Skip the forms by signing in with your Facebook
-
-Account.
-
-</span>
-
-<div style=" width:100px; margin:10px 0;"><a href="#" style=" font-size:16px; color:#fff;">Lear More</a></div>
-
+                  <div style=" width:100px; margin:10px 0;"><a href="#" style=" font-size:16px; color:#fff;">Lear More</a></div>
+            -->
       </div>
 
     </div>
 
   </div>
 
-  </div>
+  
 
-  <div class="clear"></div>-->
+  <div class="clear"></div>
 
    
 
